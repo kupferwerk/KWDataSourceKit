@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SectionedDataSource Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/SectionedDataSource" class="dashAnchor"></a>
+    <a title="SectionedDataSource Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">KWDataSourceKit Docs</a> (32% documented)</p>
+        <p class="header-right"><a href="https://github.com/kupferwerk/KWDataSourceKit"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">KWDataSourceKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        SectionedDataSource Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ArrayDataSource.html">ArrayDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseDataSource.html">BaseDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CoreDataSource.html">CoreDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Section.html">Section</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SectionedDataSource.html">SectionedDataSource</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Reusable.html">Reusable</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SectionedDataSource</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>SectionedDataSource</code> is a lightweight <code>DataSource</code> that can be used as a <code>UITableViewDataSource</code> or
+<code>UICollectionViewDataSource</code>. <code>SectionedDataSource</code> supports multiple sections. To change the items
+served by the <code>dataSource</code> set the <code>items</code> property.
+- Note: If you need only one section, consider using <code><a href="../Classes/ArrayDataSource.html">ArrayDataSource</a></code> instead</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC15KWDataSourceKit19SectionedDataSource8sectionsGSaGCS_7Sectionq___"></a>
+                    <a name="//apple_ref/swift/Property/sections" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC15KWDataSourceKit19SectionedDataSource8sectionsGSaGCS_7Sectionq___">sections</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The sections served to a <code>UITableView</code> or <code>UICollectionView</code> by the <code>dataSource</code>
+- Note: Modifying this property causes the <code>dataSource</code> to call <code>reloadData()</code> on
+its <code>tableView</code> and <code>collectionView</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">sections</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Classes/Section.html">Section</a></span><span class="o">&lt;</span><span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">]()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC15KWDataSourceKit19SectionedDataSourcecFT14collectionViewGSqCSo16UICollectionView_9tableViewGSqCSo11UITableView_17cellConfigurationGSqFT4cellx4itemq__T___GS0_xq__"></a>
+                    <a name="//apple_ref/swift/Method/init(collectionView:tableView:cellConfiguration:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC15KWDataSourceKit19SectionedDataSourcecFT14collectionViewGSqCSo16UICollectionView_9tableViewGSqCSo11UITableView_17cellConfigurationGSqFT4cellx4itemq__T___GS0_xq__">init(collectionView:tableView:cellConfiguration:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new <code>SectionedDataSource</code>
+- Parameter collectionView: A <code>collectionView</code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls
+- Parameter tableView: A <code>tableView</code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls
+- Parameter cellConfiguration: A <code>CellConfiguration</code> called for each cell to configure it with an item
+- Note: You should only ever provide a <code>tableView</code> <em>or</em> a <code>collectionView</code> for one <code>dataSource</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">cellConfiguration</span><span class="p">:</span> <span class="kt">CellConfiguration</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code>collectionView</code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code>tableView</code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cellConfiguration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code>CellConfiguration</code> called for each cell to configure it with an item</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC15KWDataSourceKit19SectionedDataSource16numberOfSectionsFT_Si"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC15KWDataSourceKit19SectionedDataSource16numberOfSectionsFT_Si">numberOfSections()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC15KWDataSourceKit19SectionedDataSource22numberOfItemsInSectionFSiSi"></a>
+                    <a name="//apple_ref/swift/Method/numberOfItemsInSection(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC15KWDataSourceKit19SectionedDataSource22numberOfItemsInSectionFSiSi">numberOfItemsInSection(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC15KWDataSourceKit19SectionedDataSource15itemAtIndexPathFCSo11NSIndexPathq_"></a>
+                    <a name="//apple_ref/swift/Method/itemAtIndexPath(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC15KWDataSourceKit19SectionedDataSource15itemAtIndexPathFCSo11NSIndexPathq_">itemAtIndexPath(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UITableViewDataSource"></a>
+                <a name="//apple_ref/swift/Section/UITableViewDataSource" class="dashAnchor"></a>
+                <a href="#/UITableViewDataSource">
+                  <h3 class="section-name">UITableViewDataSource</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC15KWDataSourceKit19SectionedDataSource9tableViewFTCSo11UITableView23titleForHeaderInSectionSi_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:titleForHeaderInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC15KWDataSourceKit19SectionedDataSource9tableViewFTCSo11UITableView23titleForHeaderInSectionSi_GSqSS_">tableView(_:titleForHeaderInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC15KWDataSourceKit19SectionedDataSource9tableViewFTCSo11UITableView23titleForFooterInSectionSi_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:titleForFooterInSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC15KWDataSourceKit19SectionedDataSource9tableViewFTCSo11UITableView23titleForFooterInSectionSi_GSqSS_">tableView(_:titleForFooterInSection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2016-06-30)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

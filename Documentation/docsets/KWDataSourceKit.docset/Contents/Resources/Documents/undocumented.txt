@@ -1,0 +1,52 @@
+Reusable.swift
+	static var reuseId: String { get }
+	public static var reuseId: String
+BaseDataSource.swift
+	public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+	public func numberOfSectionsInTableView(tableView: UITableView) -> Int
+	public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+	public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+	public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+	public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+ArrayDataSource.swift
+	public override func numberOfSections() -> Int
+	public override func numberOfItemsInSection(section: Int) -> Int
+	public override func itemAtIndexPath(indexPath: NSIndexPath) -> ItemType
+SectionedDataSource.swift
+	public override func numberOfSections() -> Int
+	public override func numberOfItemsInSection(section: Int) -> Int
+	public override func itemAtIndexPath(indexPath: NSIndexPath) -> ItemType
+	public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+	public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String?
+Section.swift
+	public class Section<ItemType>
+	public private(set) var items = [ItemType]()
+	public var headerTitle: String?
+	public var footerTitle: String?
+	public convenience init(items: ItemType...)
+	public init(items: [ItemType])
+	public func addItem(item: ItemType)
+	public func addItems(newItems: ItemType...)
+	public func addItems(newItems: [ItemType])
+CoreDataSource.swift
+	public class CoreDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellType, ItemType>, NSFetchedResultsControllerDelegate
+	public var paused: Bool = false
+	public convenience init(fetchRequest: NSFetchRequest,
+        inContext context: NSManagedObjectContext,
+        sectionNameKeyPath: String? = nil,
+        collectionView: UICollectionView? = nil,
+        tableView: UITableView? = nil,
+        cellConfiguration: CellConfiguration? = nil)
+	public init(fetchedResultsController: NSFetchedResultsController,
+        collectionView: UICollectionView? = nil,
+        tableView: UITableView? = nil,
+        cellConfiguration: CellConfiguration? = nil)
+	public func loadContent()
+	public override func numberOfSections() -> Int
+	public override func numberOfItemsInSection(section: Int) -> Int
+	public override func itemAtIndexPath(indexPath: NSIndexPath) -> ItemType
+	public func controller(controller: NSFetchedResultsController, sectionIndexTitleForSectionName sectionName: String) -> String?
+	public func controllerWillChangeContent(controller: NSFetchedResultsController)
+	public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?)
+	public func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType)
+	public func controllerDidChangeContent(controller: NSFetchedResultsController)

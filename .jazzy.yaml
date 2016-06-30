@@ -1,0 +1,4 @@
+output: ./Documentation
+author: Kupferwerk GmbH
+module: KWDataSourceKit
+github_url: https://github.com/kupferwerk/KWDataSourceKit

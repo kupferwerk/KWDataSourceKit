@@ -1,0 +1,25 @@
+//
+//  KWDataSourceKit.xcconfig
+//  KWDataSourceKit
+//
+//  Copyright © 2016 Kupferwerk GmbH. All rights reserved.
+//
+//  Unofficial guide to xcconfigs: https://pewpewthespells.com/blog/xcconfig_guide.html
+//
+
+// Packaging
+PRODUCT_NAME = KWDataSourceKit
+INFOPLIST_FILE = $(PRODUCT_NAME)/Info.plist
+
+// Deployment
+IPHONEOS_DEPLOYMENT_TARGET = 8.0
+TVOS_DEPLOYMENT_TARGET = 9.0
+
+// Linking
+DYLIB_COMPATIBILITY_VERSION = 1
+DYLIB_CURRENT_VERSION = 1
+
+// Versioning
+CURRENT_PROJECT_VERSION = 1
+VERSION_INFO_PREFIX =
+VERSIONING_SYSTEM = apple-generic
