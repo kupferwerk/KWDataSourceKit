@@ -11,7 +11,7 @@ import Foundation
 ///
 /// This will call Swift's `precondition` by default (and terminate the program).
 /// But it can be changed at runtime to be tested instead of terminating.
-func precondition(@autoclosure condition: () -> Bool, @autoclosure _ message: () -> String = "", file: StaticString = #file, line: UInt = #line) {
+func precondition(_ condition: @autoclosure() -> Bool, _ message: @autoclosure() -> String = "", file: StaticString = #file, line: UInt = #line) {
     preconditionClosure(condition(), message(), file, line)
 }
 

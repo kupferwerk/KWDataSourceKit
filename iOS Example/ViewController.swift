@@ -34,9 +34,9 @@ class ViewController: UITableViewController {
         tableView.dataSource = dataSource
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let link = dataSource.itemAtIndexPath(indexPath)
-        performSegueWithIdentifier(link.segueIdentifier, sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let link = dataSource.item(at: indexPath)
+        performSegue(withIdentifier: link.segueIdentifier, sender: self)
     }
 
 

@@ -36,14 +36,14 @@ class SectionedDataSourceTests: XCTestCase {
     
     func testSectionCount() {
         XCTAssertEqual(dataSource.numberOfSections(), 2)
-        XCTAssertEqual(dataSource.numberOfItemsInSection(0), 1)
-        XCTAssertEqual(dataSource.numberOfItemsInSection(1), 2)
+        XCTAssertEqual(dataSource.numberOfItems(inSection: 0), 1)
+        XCTAssertEqual(dataSource.numberOfItems(inSection: 1), 2)
     }
 
     func testItems() {
-        XCTAssertEqual(dataSource.itemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)).title, "0")
-        XCTAssertEqual(dataSource.itemAtIndexPath(NSIndexPath(forRow: 0, inSection: 1)).title, "1")
-        XCTAssertEqual(dataSource.itemAtIndexPath(NSIndexPath(forRow: 1, inSection: 1)).title, "2")
+        XCTAssertEqual(dataSource.item(at: IndexPath(row: 0, section: 0)).title, "0")
+        XCTAssertEqual(dataSource.item(at: IndexPath(row: 0, section: 1)).title, "1")
+        XCTAssertEqual(dataSource.item(at: IndexPath(row: 1, section: 1)).title, "2")
     }
 
     func testSeconHeaders() {

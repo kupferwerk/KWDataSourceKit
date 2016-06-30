@@ -37,12 +37,12 @@ public class ArrayDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellT
         return items.count > 0 ? 1 : 0
     }
     
-    public override func numberOfItemsInSection(section: Int) -> Int {
+    public override func numberOfItems(inSection section: Int) -> Int {
         precondition(section == 0, "There should only be one section")
         return items.count
     }
     
-    public override func itemAtIndexPath(indexPath: NSIndexPath) -> ItemType {
+    public override func item(at indexPath: IndexPath) -> ItemType {
         return items[indexPath.row]
     }
     

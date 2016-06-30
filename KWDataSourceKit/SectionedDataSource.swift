@@ -37,21 +37,21 @@ public class SectionedDataSource<CellType: Reusable, ItemType>: BaseDataSource<C
         return sections.count
     }
     
-    public override func numberOfItemsInSection(section: Int) -> Int {
+    public override func numberOfItems(inSection section: Int) -> Int {
         return sections[section].items.count
     }
     
-    public override func itemAtIndexPath(indexPath: NSIndexPath) -> ItemType {
+    public override func item(at indexPath: IndexPath) -> ItemType {
         return sections[indexPath.section].items[indexPath.row]
     }
     
     // MARK: - UITableViewDataSource
     
-    public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].headerTitle
     }
     
-    public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return sections[section].footerTitle
     }
     

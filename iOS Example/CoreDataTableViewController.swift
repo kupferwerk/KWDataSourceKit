@@ -17,8 +17,9 @@ class CoreDataTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetchRequest = NSFetchRequest(entityName: "Entity")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        // FIXME: This cast should not be necessary
+        let fetchRequest = Entity.fetchRequest() as! NSFetchRequest<Entity>
+        fetchRequest.sortDescriptors = [SortDescriptor(key: "title", ascending: true)]
         
         dataSource = CoreDataSource<TableViewCell, Entity>(fetchRequest: fetchRequest, inContext: CoreData.sharedController.mainContext, tableView: tableView, cellConfiguration: { (cell, item) -> () in
             cell.textLabel?.text = item.title

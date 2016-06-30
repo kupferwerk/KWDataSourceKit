@@ -455,11 +455,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Kupferwerk GmbH";
 				TargetAttributes = {
 					526601D21C551D350056B3B5 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					526B04D41C5804D400791CC7 = {
 						CreatedOnToolsVersion = 7.2;
@@ -469,9 +470,11 @@
 					};
 					526B04F61C58063500791CC7 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					52EE5BB41C54F80400885725 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};

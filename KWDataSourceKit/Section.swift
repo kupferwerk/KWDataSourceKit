@@ -23,16 +23,16 @@ public class Section<ItemType> {
         self.items = items
     }
     
-    public func addItem(item: ItemType) {
+    public func add(_ item: ItemType) {
         items.append(item)
     }
     
-    public func addItems(newItems: ItemType...) {
-        items.appendContentsOf(newItems)
+    public func add(_ newItems: ItemType...) {
+        items.append(contentsOf: newItems)
     }
     
-    public func addItems(newItems: [ItemType]) {
-        items.appendContentsOf(newItems)
+    public func add(contentsOf newItems: [ItemType]) {
+        items.append(contentsOf: newItems)
     }
     
 }
