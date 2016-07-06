@@ -806,7 +806,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2D1CD6486B008B57F3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 			};
 			name = Debug;
 		};
@@ -814,7 +813,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2D1CD6486B008B57F3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 			};
 			name = Release;
 		};
