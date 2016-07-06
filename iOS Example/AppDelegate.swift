@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func seedSampleData() {
         for i in 1...50 {
             let context = CoreData.sharedController.mainContext
-            let entity = context.insert(Entity)
+            let entity = context.insert(Entity.self)
             entity.title = "Test \(i)"
         }
         
