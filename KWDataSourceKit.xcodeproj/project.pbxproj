@@ -37,6 +37,7 @@
 		526B04E31C58053600791CC7 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526601CA1C550F4B0056B3B5 /* Reusable.swift */; };
 		526B04ED1C58062B00791CC7 /* KWDataSourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526B04D51C5804D400791CC7 /* KWDataSourceKit.framework */; };
 		526B04FC1C58063500791CC7 /* KWDataSourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE5BB51C54F80400885725 /* KWDataSourceKit.framework */; };
+		52E381AE1D2CFC9400285201 /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C204431CABB7B100B0840C /* Precondition.swift */; };
 		52EE5BB91C54F80400885725 /* KWDataSourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 52EE5BB81C54F80400885725 /* KWDataSourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8677746E1CABAF8700342B88 /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8677746B1CABAEE400342B88 /* ReusableTests.swift */; };
 		8677746F1CABAF8800342B88 /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8677746B1CABAEE400342B88 /* ReusableTests.swift */; };
@@ -597,6 +598,7 @@
 				526B04DF1C58053600791CC7 /* ArrayDataSource.swift in Sources */,
 				526B04DE1C58053600791CC7 /* BaseDataSource.swift in Sources */,
 				526B04E01C58053600791CC7 /* SectionedDataSource.swift in Sources */,
+				52E381AE1D2CFC9400285201 /* Precondition.swift in Sources */,
 				526B04E11C58053600791CC7 /* CoreDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
