@@ -108,3 +108,27 @@ override func viewDidLoad() {
     dataSource.loadContent()
 }
 ```
+
+## License
+
+```
+Copyright 2016 Kupferwerk GmbH
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+**Note**: The [Configuration](Configuration/) folder contains a
+third party project [xcconfigs](https://github.com/jspahrsummers/xcconfigs) and
+it's README.md. The license in that [README.md](Configuration/README.md) only 
+applies to the contents of the [Configuration](Configuration/)
+folder that are part of [xcconfigs](https://github.com/jspahrsummers/xcconfigs).
