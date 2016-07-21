@@ -12,7 +12,7 @@ import XCTest
 extension XCTestCase {
     func expectingPreconditionFailure(_ expectedMessage: String? = nil, block: @noescape() -> ()) {
 
-        let expectation = self.expectation(withDescription: "failing precondition")
+        let expectation = self.expectation(description: "failing precondition")
 
         // Overwrite `precondition` with something that doesn't terminate but verifies it happened
         preconditionClosure = { (condition, message, file, line) in
@@ -28,7 +28,7 @@ extension XCTestCase {
         block();
 
         // Verify precondition "failed"
-        waitForExpectations(withTimeout: 0.0, handler: nil)
+        waitForExpectations(timeout: 0.0, handler: nil)
 
         // Reset precondition
         preconditionClosure = defaultPreconditionClosure

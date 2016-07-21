@@ -129,6 +129,7 @@
 		526B04E81C58062B00791CC7 /* KWDataSourceKitTests tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KWDataSourceKitTests tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526B04F71C58063500791CC7 /* KWDataSourceKitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KWDataSourceKitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		526B05031C58066100791CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52EC0E2E1D40B04500285201 /* iOS-Example.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "iOS-Example.xcconfig"; sourceTree = "<group>"; };
 		52EE5BB51C54F80400885725 /* KWDataSourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KWDataSourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EE5BB81C54F80400885725 /* KWDataSourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KWDataSourceKit.h; sourceTree = "<group>"; };
 		52EE5BBA1C54F80400885725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -282,6 +283,7 @@
 				5AF26D2A1CD6486B008B57F3 /* iOS */,
 				5AF26D2F1CD6486B008B57F3 /* tvOS */,
 				5AC38E6D1CD659EA00D054D6 /* KWDataSourceKit.xcconfig */,
+				52EC0E2E1D40B04500285201 /* iOS-Example.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";

@@ -1,0 +1,19 @@
+//
+//  iOS Example.xcconfig
+//  KWDataSourceKit
+//
+//  Copyright © 2016 Kupferwerk GmbH. All rights reserved.
+//
+//  Unofficial guide to xcconfigs: https://pewpewthespells.com/blog/xcconfig_guide.html
+//
+
+// Packaging
+PRODUCT_NAME = iOS Example
+INFOPLIST_FILE = $(PRODUCT_NAME)/Info.plist
+
+// Deployment
+IPHONEOS_DEPLOYMENT_TARGET = 10.0
+
+// Swift
+SWIFT_VERSION = 3.0
+EMBEDDED_CONTENT_CONTAINS_SWIFT = 1

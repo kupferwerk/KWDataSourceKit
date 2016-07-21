@@ -9,3 +9,6 @@
 
 // Apply common settings specific to iOS
 #include "iOS-Base.xcconfig"
+
+// Import base project settings
+#include "../iOS-Example.xcconfig"
