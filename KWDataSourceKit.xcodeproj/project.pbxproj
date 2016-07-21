@@ -132,28 +132,28 @@
 		52EE5BB51C54F80400885725 /* KWDataSourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KWDataSourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EE5BB81C54F80400885725 /* KWDataSourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KWDataSourceKit.h; sourceTree = "<group>"; };
 		52EE5BBA1C54F80400885725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8677746B1CABAEE400342B88 /* ReusableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
 		5AC38E6D1CD659EA00D054D6 /* KWDataSourceKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = KWDataSourceKit.xcconfig; sourceTree = "<group>"; };
 		5AF26D231CD6486B008B57F3 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		867774761CABB4D200342B88 /* ArrayDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceTests.swift; sourceTree = "<group>"; };
 		5AF26D251CD6486B008B57F3 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		5AF26D261CD6486B008B57F3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		86C204431CABB7B100B0840C /* Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Precondition.swift; sourceTree = "<group>"; };
 		5AF26D281CD6486B008B57F3 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
 		5AF26D291CD6486B008B57F3 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		5AF26D2B1CD6486B008B57F3 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
-		86C204451CABB86A00B0840C /* XCTest+Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+Precondition.swift"; sourceTree = "<group>"; };
-		86C204491CABC7F800B0840C /* BaseDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataSourceTests.swift; sourceTree = "<group>"; };
-		86C204501CABD13300B0840C /* TestEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntities.swift; sourceTree = "<group>"; };
-		86C204541CABD30800B0840C /* SectionedDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataSourceTests.swift; sourceTree = "<group>"; };
-		86C204571CABF67E00B0840C /* CoreDataDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDataSourceTests.swift; sourceTree = "<group>"; };
-		86C204621CAC073200B0840C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		5AF26D2C1CD6486B008B57F3 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
 		5AF26D2D1CD6486B008B57F3 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		5AF26D2E1CD6486B008B57F3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5AF26D301CD6486B008B57F3 /* tvOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS-Application.xcconfig"; sourceTree = "<group>"; };
 		5AF26D311CD6486B008B57F3 /* tvOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS-Base.xcconfig"; sourceTree = "<group>"; };
 		5AF26D321CD6486B008B57F3 /* tvOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		8677746B1CABAEE400342B88 /* ReusableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
+		867774761CABB4D200342B88 /* ArrayDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceTests.swift; sourceTree = "<group>"; };
+		86C204431CABB7B100B0840C /* Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Precondition.swift; sourceTree = "<group>"; };
+		86C204451CABB86A00B0840C /* XCTest+Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+Precondition.swift"; sourceTree = "<group>"; };
+		86C204491CABC7F800B0840C /* BaseDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataSourceTests.swift; sourceTree = "<group>"; };
+		86C204501CABD13300B0840C /* TestEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntities.swift; sourceTree = "<group>"; };
+		86C204541CABD30800B0840C /* SectionedDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionedDataSourceTests.swift; sourceTree = "<group>"; };
+		86C204571CABF67E00B0840C /* CoreDataDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDataSourceTests.swift; sourceTree = "<group>"; };
+		86C204621CAC073200B0840C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,7 +383,6 @@
 				526B04D11C5804D400791CC7 /* Frameworks */,
 				526B04D21C5804D400791CC7 /* Headers */,
 				526B04D31C5804D400791CC7 /* Resources */,
-				5AE968871C59F1A400F9E9CF /* Versioning */,
 			);
 			buildRules = (
 			);
@@ -439,7 +438,6 @@
 				52EE5BB11C54F80400885725 /* Frameworks */,
 				52EE5BB21C54F80400885725 /* Headers */,
 				52EE5BB31C54F80400885725 /* Resources */,
-				5AE968781C58A63100F9E9CF /* Versioning */,
 			);
 			buildRules = (
 			);
@@ -539,37 +537,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5AE968781C58A63100F9E9CF /* Versioning */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Versioning;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Scripts/bundleVersioning.sh\"";
-		};
-		5AE968871C59F1A400F9E9CF /* Versioning */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Versioning;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Scripts/bundleVersioning.sh\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		526601CF1C551D350056B3B5 /* Sources */ = {
@@ -697,8 +664,8 @@
 			baseConfigurationReference = 5AF26D2B1CD6486B008B57F3 /* iOS-Application.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEFINES_MODULE = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.KWDataSouce-iOS-Example";
@@ -713,8 +680,8 @@
 			baseConfigurationReference = 5AF26D2B1CD6486B008B57F3 /* iOS-Application.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEFINES_MODULE = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.KWDataSouce-iOS-Example";
