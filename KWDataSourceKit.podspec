@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'KWDataSourceKit'
-  s.version = '0.3'
+  s.version = '0.3.1'
   s.summary = 'UITableView and UICollectionView DataSources enabling light view controllers'
   s.homepage = 'https://github.com/kupferwerk'
   s.authors = { 'Kupferwerk GmbH' => 'mathias.nagler@kupferwerk.com' }
