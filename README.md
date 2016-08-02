@@ -2,6 +2,7 @@
 ![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS-lightgrey.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/badge/CocoaPods-compatible-blue.svg)](https://cocoapods.org)
+[![Build Status](https://travis-ci.org/kupferwerk/KWDataSourceKit.svg?branch=master)](https://travis-ci.org/kupferwerk/KWDataSourceKit)
 
 KWDataSourceKit is a library containing flexible data sources for `UITableView` and `UICollectionView`. It aims to slim down your view controllers be moving `UITableViewDataSource` and `UICollectionViewDataSource` to a separate object.
 
