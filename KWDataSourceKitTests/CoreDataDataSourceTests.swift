@@ -27,7 +27,7 @@ class CoreDataDataSourceTests: XCTestCase {
         let _ = try? mainContext.save()
 
         let fetchRequest = NSFetchRequest<TestEntity>(entityName: "TestEntity")
-        fetchRequest.sortDescriptors = [SortDescriptor(key: "title", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         dataSource = CoreDataSource<CustomTableViewCell, TestEntity>(fetchRequest: fetchRequest, inContext: mainContext, tableView: UITableView(), cellConfiguration: { (cell, item) -> () in
         })
         dataSource.loadContent()
@@ -48,7 +48,7 @@ class CoreDataDataSourceTests: XCTestCase {
 
     func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
         let bundle = Bundle(for: CoreDataDataSourceTests.self)
-        let modelURL = bundle.urlForResource("Model", withExtension: "momd")!
+        let modelURL = bundle.url(forResource: "Model", withExtension: "momd")!
         let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)!
 
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)

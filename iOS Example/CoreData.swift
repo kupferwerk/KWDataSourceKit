@@ -38,7 +38,7 @@ class CoreData {
     }()
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let modelURL = Bundle.main.urlForResource("DataModel", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "DataModel", withExtension: "momd")!
         let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)!
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         let _ = try! persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)

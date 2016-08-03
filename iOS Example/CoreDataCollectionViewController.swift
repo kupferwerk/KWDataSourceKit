@@ -19,7 +19,7 @@ class CoreDataCollectionViewController: UICollectionViewController {
         
         // FIXME: This cast should not be necessary
         let fetchRequest = Entity.fetchRequest() as! NSFetchRequest<Entity>
-        fetchRequest.sortDescriptors = [SortDescriptor(key: "title", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
         dataSource = CoreDataSource<CollectionViewCell, Entity>(fetchRequest: fetchRequest, inContext: CoreData.sharedController.mainContext, collectionView: collectionView, cellConfiguration: { (cell, item) -> () in
             cell.label.text = item.title
