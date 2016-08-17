@@ -10,7 +10,7 @@ import XCTest
 @testable import KWDataSourceKit
 
 extension XCTestCase {
-    func expectingPreconditionFailure(_ expectedMessage: String? = nil, block: @noescape() -> ()) {
+    func expectingPreconditionFailure(_ expectedMessage: String? = nil, block: () -> ()) {
 
         let expectation = self.expectation(description: "failing precondition")
 

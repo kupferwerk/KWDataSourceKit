@@ -21,7 +21,7 @@ public class BaseDataSource<CellType: Reusable, ItemType>: NSObject, UITableView
     /// A closure used for configuring a `cell` with an item so it can be displayed in a `tableView` or `collectionView`
     /// - Parameter cell: The `tableViewCell` or collection view cell that should be configured
     /// - Parameter item: The model item which should be displayed in a cell
-    public typealias CellConfiguration = (cell: CellType, item: ItemType) -> ()
+    public typealias CellConfiguration = (_ cell: CellType, _ item: ItemType) -> ()
     
     /// The closure called for each cell, configuring cells with items to be displayed.
     /// - See: `CellConfiguration`
@@ -98,7 +98,7 @@ public class BaseDataSource<CellType: Reusable, ItemType>: NSObject, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: CellType.reuseId, for: indexPath)
         
         if let cellConfiguration = cellConfiguration {
-            cellConfiguration(cell: cell as! CellType, item: item(at: indexPath))
+            cellConfiguration(cell as! CellType, item(at: indexPath))
         }
         
         return cell
@@ -118,7 +118,7 @@ public class BaseDataSource<CellType: Reusable, ItemType>: NSObject, UITableView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellType.reuseId, for: indexPath)
         
         if let cellConfiguration = cellConfiguration {
-            cellConfiguration(cell: cell as! CellType, item: item(at: indexPath))
+            cellConfiguration(cell as! CellType, item(at: indexPath))
         }
         
         return cell

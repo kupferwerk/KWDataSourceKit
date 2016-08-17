@@ -11,12 +11,12 @@ import KWDataSourceKit
 
 class ViewController: UITableViewController {
     
-    private struct Link {
-        private let title: String
-        private let segueIdentifier: String
+    fileprivate struct Link {
+        fileprivate let title: String
+        fileprivate let segueIdentifier: String
     }
     
-    private let items  = [
+    fileprivate let items  = [
         Link(title: "Table - SectionedDataSource", segueIdentifier: "sectioned-table"),
         Link(title: "Table - CoreDataSource", segueIdentifier: "coredata-table"),
         Link(title: "Collection - CoreDataSource", segueIdentifier: "coredata-collection")]

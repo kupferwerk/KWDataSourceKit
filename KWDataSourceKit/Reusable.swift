@@ -20,7 +20,7 @@ public protocol Reusable {
 
 extension Reusable {
     public static var reuseId: String {
-        return String(self)
+        return String(describing: self)
     }
 }
 
