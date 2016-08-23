@@ -12,7 +12,7 @@ import UIKit
 /// `UICollectionViewDataSource`. `SectionedDataSource` supports multiple sections. To change the items
 /// served by the `dataSource` set the `items` property.
 /// - Note: If you need only one section, consider using `ArrayDataSource` instead
-public class SectionedDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellType, ItemType> {
+open class SectionedDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellType, ItemType> {
     
     /// The sections served to a `UITableView` or `UICollectionView` by the `dataSource`
     /// - Note: Modifying this property causes the `dataSource` to call `reloadData()` on
@@ -33,15 +33,15 @@ public class SectionedDataSource<CellType: Reusable, ItemType>: BaseDataSource<C
         super.init(collectionView: collectionView, tableView: tableView, cellConfiguration: cellConfiguration)
     }
     
-    public override func numberOfSections() -> Int {
+    open override func numberOfSections() -> Int {
         return sections.count
     }
     
-    public override func numberOfItems(inSection section: Int) -> Int {
+    open override func numberOfItems(inSection section: Int) -> Int {
         return sections[section].items.count
     }
     
-    public override func item(at indexPath: IndexPath) -> ItemType {
+    open override func item(at indexPath: IndexPath) -> ItemType {
         return sections[indexPath.section].items[indexPath.row]
     }
     

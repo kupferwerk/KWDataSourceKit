@@ -38,7 +38,7 @@ private enum CollectionViewChanges {
     }
 }
 
-public class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: BaseDataSource<CellType, ItemType>, NSFetchedResultsControllerDelegate {
+open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: BaseDataSource<CellType, ItemType>, NSFetchedResultsControllerDelegate {
     
     private var fetchedResultsController: NSFetchedResultsController<ItemType>
     
@@ -87,18 +87,18 @@ public class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>:
     
     // MARK: - BaseDataSource
     
-    public override func numberOfSections() -> Int {
+    open override func numberOfSections() -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
     
-    public override func numberOfItems(inSection section: Int) -> Int {
+    open override func numberOfItems(inSection section: Int) -> Int {
         guard let sectionInfo = fetchedResultsController.sections?[section] else {
             return 0
         }
         return sectionInfo.numberOfObjects
     }
     
-    public override func item(at indexPath: IndexPath) -> ItemType {
+    open override func item(at indexPath: IndexPath) -> ItemType {
         return fetchedResultsController.object(at: indexPath)
     }
 
