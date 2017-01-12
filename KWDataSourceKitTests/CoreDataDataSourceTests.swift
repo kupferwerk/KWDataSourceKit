@@ -18,15 +18,15 @@ class CoreDataDataSourceTests: XCTestCase {
 
         let mainContext = setUpInMemoryManagedObjectContext()
 
-        let firstEntity = NSEntityDescription.insertNewObjectForEntityForName("TestEntity", inManagedObjectContext:mainContext) as! TestEntity
+        let firstEntity = NSEntityDescription.insertNewObject(forEntityName: "TestEntity", into:mainContext) as! TestEntity
         firstEntity.title = "0"
 
-        let secondEntity = NSEntityDescription.insertNewObjectForEntityForName("TestEntity", inManagedObjectContext:mainContext) as! TestEntity
+        let secondEntity = NSEntityDescription.insertNewObject(forEntityName: "TestEntity", into:mainContext) as! TestEntity
         secondEntity.title = "1"
 
         let _ = try? mainContext.save()
 
-        let fetchRequest = NSFetchRequest(entityName: "TestEntity")
+        let fetchRequest = NSFetchRequest<TestEntity>(entityName: "TestEntity")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         dataSource = CoreDataSource<CustomTableViewCell, TestEntity>(fetchRequest: fetchRequest, inContext: mainContext, tableView: UITableView(), cellConfiguration: { (cell, item) -> () in
         })
@@ -35,31 +35,31 @@ class CoreDataDataSourceTests: XCTestCase {
     
     func testSections() {
         XCTAssertEqual(dataSource.numberOfSections(), 1)
-        XCTAssertEqual(dataSource.numberOfItemsInSection(0), 2)
+        XCTAssertEqual(dataSource.numberOfItems(inSection: 0), 2)
     }
 
     func testItems() {
-        let entity0 = dataSource.itemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0))
+        let entity0 = dataSource.item(at: IndexPath(item: 0, section: 0))
         XCTAssertEqual(entity0.title, "0")
 
-        let entity1 = dataSource.itemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))
+        let entity1 = dataSource.item(at: IndexPath(item: 1, section: 0))
         XCTAssertEqual(entity1.title, "1")
     }
 
     func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext {
-        let bundle = NSBundle(forClass: CoreDataDataSourceTests.self)
-        let modelURL = bundle.URLForResource("Model", withExtension: "momd")!
-        let managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
+        let bundle = Bundle(for: CoreDataDataSourceTests.self)
+        let modelURL = bundle.url(forResource: "Model", withExtension: "momd")!
+        let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)!
 
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
 
         do {
-            try persistentStoreCoordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
+            try persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
         } catch {
             print("Adding in-memory persistent store coordinator failed")
         }
 
-        let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
         
         return managedObjectContext

@@ -27,23 +27,23 @@ class ArrayDataSourceTests: XCTestCase {
 
     func testSections() {
         XCTAssertEqual(dataSource.numberOfSections(), 1)
-        XCTAssertEqual(dataSource.numberOfItemsInSection(0), 3)
+        XCTAssertEqual(dataSource.numberOfItems(inSection: 0), 3)
     }
 
     func testInvalidSection() {
         expectingPreconditionFailure() {
-            dataSource.numberOfItemsInSection(1)
+            let _ = dataSource.numberOfItems(inSection: 1)
         }
     }
 
     func testItems() {
-        let item0 = dataSource.itemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0))
+        let item0 = dataSource.item(at: IndexPath(item: 0, section: 0))
         XCTAssertEqual(item0.title, "0")
 
-        let item1 = dataSource.itemAtIndexPath(NSIndexPath(forItem: 1, inSection: 0))
+        let item1 = dataSource.item(at: IndexPath(item: 1, section: 0))
         XCTAssertEqual(item1.title, "1")
 
-        let item2 = dataSource.itemAtIndexPath(NSIndexPath(forItem: 2, inSection: 0))
+        let item2 = dataSource.item(at: IndexPath(item: 2, section: 0))
         XCTAssertEqual(item2.title, "2")
     }
 }

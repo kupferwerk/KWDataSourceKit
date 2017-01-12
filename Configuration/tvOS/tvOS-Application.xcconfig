@@ -9,3 +9,6 @@
 
 // Apply common settings specific to tvOS
 #include "tvOS-Base.xcconfig"
+
+// Import base project settings
+#include "../iOS-Example.xcconfig"

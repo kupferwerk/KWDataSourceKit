@@ -17,7 +17,8 @@ class CoreDataCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetchRequest = NSFetchRequest(entityName: "Entity")
+        // FIXME: This cast should not be necessary
+        let fetchRequest = Entity.fetchRequest() as! NSFetchRequest<Entity>
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
         dataSource = CoreDataSource<CollectionViewCell, Entity>(fetchRequest: fetchRequest, inContext: CoreData.sharedController.mainContext, collectionView: collectionView, cellConfiguration: { (cell, item) -> () in

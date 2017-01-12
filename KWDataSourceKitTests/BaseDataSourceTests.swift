@@ -17,7 +17,7 @@ class BaseDataSourceTests: XCTestCase {
         super.setUp()
 
         tableView = UITableView()
-        collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     }
 
     func testFailingInitializaiton() {

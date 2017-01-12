@@ -13,8 +13,8 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         seedSampleData()
         return true
     }
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func seedSampleData() {
         for i in 1...50 {
             let context = CoreData.sharedController.mainContext
-            let entity = context.insert(Entity)
+            let entity = context.insert(Entity.self)
             entity.title = "Test \(i)"
         }
         

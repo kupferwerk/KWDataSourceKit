@@ -21,7 +21,7 @@ class CoreData {
             return
         }
         
-        mainContext.performBlockAndWait {
+        mainContext.performAndWait {
             do {
                 try self.mainContext.save()
             } catch {
@@ -31,17 +31,17 @@ class CoreData {
     }
     
     lazy var mainContext: NSManagedObjectContext = {
-        let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         context.persistentStoreCoordinator = self.persistentStoreCoordinator
         return context
     }()
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let modelURL = NSBundle.mainBundle().URLForResource("DataModel", withExtension: "momd")!
-        let managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)!
+        let modelURL = Bundle.main.url(forResource: "DataModel", withExtension: "momd")!
+        let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)!
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        let _ = try! persistentStoreCoordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
+        let _ = try! persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
         return persistentStoreCoordinator
     }()
 
@@ -49,9 +49,9 @@ class CoreData {
 
 extension NSManagedObjectContext {
     
-    func insert<T : NSManagedObject>(entity: T.Type) -> T {
+    func insert<T : NSManagedObject>(_ entity: T.Type) -> T {
         let entityName = entity.entityName
-        return NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext:self) as! T
+        return NSEntityDescription.insertNewObject(forEntityName: entityName, into:self) as! T
     }
     
 }
@@ -59,11 +59,8 @@ extension NSManagedObjectContext {
 extension NSManagedObject {
     
     class var entityName: String {
-        let components = NSStringFromClass(self).componentsSeparatedByString(".")
+        let components = NSStringFromClass(self).components(separatedBy: ".")
         return components[1]
     }
-    
-    class var request: NSFetchRequest {
-        return NSFetchRequest(entityName: entityName)
-    }
+
 }

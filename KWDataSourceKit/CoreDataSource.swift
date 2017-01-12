@@ -10,37 +10,37 @@ import UIKit
 import CoreData
 
 private enum CollectionViewChanges {
-    case RowInsert(indexPath: NSIndexPath)
-    case RowDelete(indexPath: NSIndexPath)
-    case RowUpdate(indexPath: NSIndexPath)
-    case RowMove(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
-    case SectionInsert(sectionIndex: Int)
-    case SectionDelete(sectionIndex: Int)
-    case Closure(closure: () -> ())
+    case rowInsert(indexPath: IndexPath)
+    case rowDelete(indexPath: IndexPath)
+    case rowUpdate(indexPath: IndexPath)
+    case rowMove(fromIndexPath: IndexPath, toIndexPath: IndexPath)
+    case sectionInsert(sectionIndex: Int)
+    case sectionDelete(sectionIndex: Int)
+    case closure(closure: () -> ())
     
-    func executeOnCollectionView(collectionView: UICollectionView) {
+    func execute(on collectionView: UICollectionView) {
         switch self {
-        case .RowInsert(let indexPath):
-            collectionView.insertItemsAtIndexPaths([indexPath])
-        case .RowDelete(let indexPath):
-            collectionView.deleteItemsAtIndexPaths([indexPath])
-        case .RowUpdate(let indexPath):
-            collectionView.reloadItemsAtIndexPaths([indexPath])
-        case .RowMove(let fromIndexPath, let toIndexPath):
-            collectionView.moveItemAtIndexPath(fromIndexPath, toIndexPath: toIndexPath)
-        case .SectionDelete(let sectionIndex):
-            collectionView.deleteSections(NSIndexSet(index: sectionIndex))
-        case .SectionInsert(let sectionIndex):
-            collectionView.insertSections(NSIndexSet(index: sectionIndex))
-        case .Closure(let closure):
+        case .rowInsert(let indexPath):
+            collectionView.insertItems(at: [indexPath])
+        case .rowDelete(let indexPath):
+            collectionView.deleteItems(at: [indexPath])
+        case .rowUpdate(let indexPath):
+            collectionView.reloadItems(at: [indexPath])
+        case .rowMove(let fromIndexPath, let toIndexPath):
+            collectionView.moveItem(at: fromIndexPath, to: toIndexPath)
+        case .sectionDelete(let sectionIndex):
+            collectionView.deleteSections(IndexSet(integer: sectionIndex))
+        case .sectionInsert(let sectionIndex):
+            collectionView.insertSections(IndexSet(integer: sectionIndex))
+        case .closure(let closure):
             closure()
         }
     }
 }
 
-public class CoreDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellType, ItemType>, NSFetchedResultsControllerDelegate {
+open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: BaseDataSource<CellType, ItemType>, NSFetchedResultsControllerDelegate {
     
-    private var fetchedResultsController: NSFetchedResultsController
+    private var fetchedResultsController: NSFetchedResultsController<ItemType>
     
     private var collectionViewChanges: [CollectionViewChanges]?
     
@@ -54,7 +54,7 @@ public class CoreDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellTy
         }
     }
     
-    public convenience init(fetchRequest: NSFetchRequest,
+    public convenience init(fetchRequest: NSFetchRequest<ItemType>,
         inContext context: NSManagedObjectContext,
         sectionNameKeyPath: String? = nil,
         collectionView: UICollectionView? = nil,
@@ -64,7 +64,7 @@ public class CoreDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellTy
             self.init(fetchedResultsController: controller, collectionView: collectionView, tableView: tableView, cellConfiguration: cellConfiguration)
     }
     
-    public init(fetchedResultsController: NSFetchedResultsController,
+    public init(fetchedResultsController: NSFetchedResultsController<ItemType>,
         collectionView: UICollectionView? = nil,
         tableView: UITableView? = nil,
         cellConfiguration: CellConfiguration? = nil) {
@@ -87,69 +87,69 @@ public class CoreDataSource<CellType: Reusable, ItemType>: BaseDataSource<CellTy
     
     // MARK: - BaseDataSource
     
-    public override func numberOfSections() -> Int {
+    open override func numberOfSections() -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
     
-    public override func numberOfItemsInSection(section: Int) -> Int {
+    open override func numberOfItems(inSection section: Int) -> Int {
         guard let sectionInfo = fetchedResultsController.sections?[section] else {
             return 0
         }
         return sectionInfo.numberOfObjects
     }
     
-    public override func itemAtIndexPath(indexPath: NSIndexPath) -> ItemType {
-        return fetchedResultsController.objectAtIndexPath(indexPath) as! ItemType
+    open override func item(at indexPath: IndexPath) -> ItemType {
+        return fetchedResultsController.object(at: indexPath)
     }
 
     // MARK: - NSFetchedResultsControllerDelegate
     
-    public func controller(controller: NSFetchedResultsController, sectionIndexTitleForSectionName sectionName: String) -> String? {
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName sectionName: String) -> String? {
         return sectionName
     }
     
-    public func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         collectionViewChanges = collectionView != nil ? [CollectionViewChanges]() : nil
         self.tableView?.beginUpdates()
     }
     
-    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
-        case .Insert:
-            collectionViewChanges?.append(.RowInsert(indexPath: newIndexPath!))
-            tableView?.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
-        case .Delete:
-            collectionViewChanges?.append(.RowDelete(indexPath: indexPath!))
-            tableView?.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
-        case .Update:
-            collectionViewChanges?.append(.RowUpdate(indexPath: indexPath!))
-            tableView?.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
-        case .Move:
-            collectionViewChanges?.append(.RowMove(fromIndexPath: indexPath!, toIndexPath: newIndexPath!))
-            tableView?.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+        case .insert:
+            collectionViewChanges?.append(.rowInsert(indexPath: newIndexPath!))
+            tableView?.insertRows(at: [newIndexPath!], with: .automatic)
+        case .delete:
+            collectionViewChanges?.append(.rowDelete(indexPath: indexPath!))
+            tableView?.deleteRows(at: [indexPath!], with: .automatic)
+        case .update:
+            collectionViewChanges?.append(.rowUpdate(indexPath: indexPath!))
+            tableView?.reloadRows(at: [indexPath!], with: .automatic)
+        case .move:
+            collectionViewChanges?.append(.rowMove(fromIndexPath: indexPath!, toIndexPath: newIndexPath!))
+            tableView?.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
     
-    public func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         switch type {
-        case .Insert:
-            collectionViewChanges?.append(.SectionInsert(sectionIndex: sectionIndex))
-            tableView?.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Automatic)
-        case .Delete:
-            collectionViewChanges?.append(.SectionDelete(sectionIndex: sectionIndex))
-            tableView?.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Automatic)
+        case .insert:
+            collectionViewChanges?.append(.sectionInsert(sectionIndex: sectionIndex))
+            tableView?.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
+        case .delete:
+            collectionViewChanges?.append(.sectionDelete(sectionIndex: sectionIndex))
+            tableView?.deleteSections(IndexSet(integer: sectionIndex), with: .automatic)
         default:
             assertionFailure("Unsupported NSFetchedResultsChangeType!")
             break
         }
     }
     
-    public func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView?.endUpdates()
         
         if let collectionView = collectionView {
             collectionView.performBatchUpdates({
-                self.collectionViewChanges?.forEach { $0.executeOnCollectionView(collectionView) }
+                self.collectionViewChanges?.forEach { $0.execute(on: collectionView) }
             },
             completion: { (finished) -> Void in
                 self.collectionViewChanges?.removeAll()

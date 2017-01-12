@@ -11,12 +11,12 @@ import KWDataSourceKit
 
 class ViewController: UITableViewController {
     
-    private struct Link {
-        private let title: String
-        private let segueIdentifier: String
+    fileprivate struct Link {
+        fileprivate let title: String
+        fileprivate let segueIdentifier: String
     }
     
-    private let items  = [
+    fileprivate let items  = [
         Link(title: "Table - SectionedDataSource", segueIdentifier: "sectioned-table"),
         Link(title: "Table - CoreDataSource", segueIdentifier: "coredata-table"),
         Link(title: "Collection - CoreDataSource", segueIdentifier: "coredata-collection")]
@@ -34,9 +34,9 @@ class ViewController: UITableViewController {
         tableView.dataSource = dataSource
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let link = dataSource.itemAtIndexPath(indexPath)
-        performSegueWithIdentifier(link.segueIdentifier, sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let link = dataSource.item(at: indexPath)
+        performSegue(withIdentifier: link.segueIdentifier, sender: self)
     }
 
 
