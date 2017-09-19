@@ -44,7 +44,7 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
     
     private var collectionViewChanges: [CollectionViewChanges]?
     
-    public var paused: Bool = false {
+    @objc public var paused: Bool = false {
         didSet {
             if paused == oldValue { return }
             fetchedResultsController.delegate = !paused ? self : nil
@@ -75,7 +75,7 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
     
     // MARK: - Fetching
     
-    public func loadContent() {
+    @objc public func loadContent() {
         do {
             try fetchedResultsController.performFetch()
             tableView?.reloadData()

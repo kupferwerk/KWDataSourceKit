@@ -58,7 +58,7 @@ extension NSManagedObjectContext {
 
 extension NSManagedObject {
     
-    class var entityName: String {
+    @objc class var entityName: String {
         let components = NSStringFromClass(self).components(separatedBy: ".")
         return components[1]
     }
