@@ -14,7 +14,7 @@
     <a title="BaseDataSource Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">KWDataSourceKit Docs</a> (32% documented)</p>
+        <p><a href="../index.html">KWDataSourceKit Docs</a> (48% documented)</p>
         <p class="header-right"><a href="https://github.com/kupferwerk/KWDataSourceKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -64,18 +64,21 @@
             <h1>BaseDataSource</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                 </div>
               </div>
             <p><code>BaseDataSource</code> is an abstract <code>DataSource</code> that contains functionality used by several other <code>DataSources</code>. It can not
-be used directly, as some methods need to implemented by subclasses: 
-- <code>itemAtIndexPath(indexPath: NSIndexPath) -&gt; ItemType</code>
-- <code>indexPathForItem(item: ItemType) -&gt; NSIndexPath?</code>
-- <code>numberOfSections() -&gt; Int</code>
-- <code>numberOfItemsInSection(section: Int) -&gt; Int</code>
+be used directly, as some methods need to implemented by subclasses: </p>
+
+<ul>
+<li><code>item(at indexPath: NSIndexPath) -&gt; ItemType</code></li>
+<li><code>indexPath(for: item: ItemType) -&gt; NSIndexPath?</code></li>
+<li><code>numberOfSections() -&gt; Int</code></li>
+<li><code>numberOfItems(inSection section: Int) -&gt; Int</code>
 If you are implementing your own subclass of <code>BaseDataSource</code> be sure to implement these methods. The default implementation
-causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
+causes a <code>fatalError</code> to warn about incomplete subclasses.</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
@@ -84,37 +87,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15KWDataSourceKit14BaseDataSource17cellConfigurationGSqFT4cellx4itemq__T__"></a>
-                    <a name="//apple_ref/swift/Property/cellConfiguration" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15KWDataSourceKit14BaseDataSource17cellConfigurationGSqFT4cellx4itemq__T__">cellConfiguration</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The closure called for each cell, configuring cells with items to be displayed.
-- See: <code><a href="../Classes/BaseDataSource.html#/s:C15KWDataSourceKit14BaseDataSource17CellConfiguration">CellConfiguration</a></code></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">cellConfiguration</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html#/s:C15KWDataSourceKit14BaseDataSource17CellConfiguration">CellConfiguration</a></span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:C15KWDataSourceKit14BaseDataSource17CellConfiguration"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C17CellConfigurationa"></a>
                     <a name="//apple_ref/swift/Alias/CellConfiguration" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C15KWDataSourceKit14BaseDataSource17CellConfiguration">CellConfiguration</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C17CellConfigurationa">CellConfiguration</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -122,16 +97,14 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A closure used for configuring a <code>cell</code> with an item so it can be displayed in a <code><a href="../Classes/BaseDataSource.html#/s:vC15KWDataSourceKit14BaseDataSource9tableViewXwGSqCSo11UITableView_">tableView</a></code> or <code><a href="../Classes/BaseDataSource.html#/s:vC15KWDataSourceKit14BaseDataSource14collectionViewXwGSqCSo16UICollectionView_">collectionView</a></code>
-- Parameter cell: The <code>tableViewCell</code> or collection view cell that should be configured
-- Parameter item: The model item which should be displayed in a cell</p>
+                        <p>A closure used for configuring a <code>cell</code> with an item so it can be displayed in a <code><a href="../Classes/BaseDataSource.html#/s:15KWDataSourceKit08BaseDataB0C9tableViewSo07UITableG0CSgXwv">tableView</a></code> or <code><a href="../Classes/BaseDataSource.html#/s:15KWDataSourceKit08BaseDataB0C14collectionViewSo012UICollectionG0CSgXwv">collectionView</a></code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">CellConfiguration</span> <span class="o">=</span> <span class="p">(</span><span class="nv">cell</span><span class="p">:</span> <span class="kt">CellType</span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">ItemType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">CellConfiguration</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">cell</span><span class="p">:</span> <span class="kt">CellType</span><span class="p">,</span> <span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">ItemType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -148,7 +121,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                               <td>
                                 <div>
                                   <p>The <code>tableViewCell</code> or collection view cell that should be configured</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -161,7 +133,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                               <td>
                                 <div>
                                   <p>The model item which should be displayed in a cell</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -174,9 +145,41 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15KWDataSourceKit14BaseDataSource14collectionViewXwGSqCSo16UICollectionView_"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C17cellConfigurationyx_q_tcSgv"></a>
+                    <a name="//apple_ref/swift/Property/cellConfiguration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C17cellConfigurationyx_q_tcSgv">cellConfiguration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The closure called for each cell, configuring cells with items to be displayed.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/BaseDataSource.html#/s:15KWDataSourceKit08BaseDataB0C17CellConfigurationa">CellConfiguration</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">cellConfiguration</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html#/s:15KWDataSourceKit08BaseDataB0C17CellConfigurationa">CellConfiguration</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C14collectionViewSo012UICollectionG0CSgXwv"></a>
                     <a name="//apple_ref/swift/Property/collectionView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15KWDataSourceKit14BaseDataSource14collectionViewXwGSqCSo16UICollectionView_">collectionView</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C14collectionViewSo012UICollectionG0CSgXwv">collectionView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -185,14 +188,14 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>If the <code>collectionView</code> property is assigned, the <code>dataSource</code> will perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls on it as the
-<code>dataSource</code>&rsquo;s data changes</p>
+<code>dataSource</code>&lsquo;s data changes</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -202,9 +205,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15KWDataSourceKit14BaseDataSource9tableViewXwGSqCSo11UITableView_"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C9tableViewSo07UITableG0CSgXwv"></a>
                     <a name="//apple_ref/swift/Property/tableView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15KWDataSourceKit14BaseDataSource9tableViewXwGSqCSo11UITableView_">tableView</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C9tableViewSo07UITableG0CSgXwv">tableView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -213,14 +216,14 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>If the <code>tableView</code> property is assigned, the <code>dataSource</code> will perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls on it as the
-<code>dataSource</code>&rsquo;s data changes</p>
+<code>dataSource</code>&lsquo;s data changes</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -230,9 +233,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSourcecFT14collectionViewGSqCSo16UICollectionView_9tableViewGSqCSo11UITableView_17cellConfigurationGSqFT4cellx4itemq__T___GS0_xq__"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0CACyxq_GSo16UICollectionViewCSg010collectionG0_So07UITableG0CSg05tableG0yx_q_tcSg17cellConfigurationtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(collectionView:tableView:cellConfiguration:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSourcecFT14collectionViewGSqCSo16UICollectionView_9tableViewGSqCSo11UITableView_17cellConfigurationGSqFT4cellx4itemq__T___GS0_xq__">init(collectionView:tableView:cellConfiguration:)</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0CACyxq_GSo16UICollectionViewCSg010collectionG0_So07UITableG0CSg05tableG0yx_q_tcSg17cellConfigurationtcfc">init(collectionView:tableView:cellConfiguration:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -240,18 +243,19 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes a new <code>BaseDataSource</code>
-- Parameter collectionView: A <code><a href="../Classes/BaseDataSource.html#/s:vC15KWDataSourceKit14BaseDataSource14collectionViewXwGSqCSo16UICollectionView_">collectionView</a></code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls
-- Parameter tableView: A <code><a href="../Classes/BaseDataSource.html#/s:vC15KWDataSourceKit14BaseDataSource9tableViewXwGSqCSo11UITableView_">tableView</a></code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls
-- Parameter cellConfiguration: A <code><a href="../Classes/BaseDataSource.html#/s:C15KWDataSourceKit14BaseDataSource17CellConfiguration">CellConfiguration</a></code> called for each cell to configure it with an item
-- Note: You should only ever provide a <code><a href="../Classes/BaseDataSource.html#/s:vC15KWDataSourceKit14BaseDataSource9tableViewXwGSqCSo11UITableView_">tableView</a></code> <em>or</em> a <code><a href="../Classes/BaseDataSource.html#/s:vC15KWDataSourceKit14BaseDataSource14collectionViewXwGSqCSo16UICollectionView_">collectionView</a></code> for one <code>dataSource</code></p>
+                        <p>Initializes a new <code>BaseDataSource</code></p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    You should only ever provide a <code><a href="../Classes/BaseDataSource.html#/s:15KWDataSourceKit08BaseDataB0C9tableViewSo07UITableG0CSgXwv">tableView</a></code> <em>or</em> a <code><a href="../Classes/BaseDataSource.html#/s:15KWDataSourceKit08BaseDataB0C14collectionViewSo012UICollectionG0CSgXwv">collectionView</a></code> for one <code>dataSource</code>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">cellConfiguration</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html#/s:C15KWDataSourceKit14BaseDataSource17CellConfiguration">CellConfiguration</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">cellConfiguration</span><span class="p">:</span> <span class="kt"><a href="../Classes/BaseDataSource.html#/s:15KWDataSourceKit08BaseDataB0C17CellConfigurationa">CellConfiguration</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -268,7 +272,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                               <td>
                                 <div>
                                   <p>A <code>collectionView</code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -281,7 +284,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                               <td>
                                 <div>
                                   <p>A <code>tableView</code> on which the <code>dataSource</code> should perform <code>insert</code>/<code>reload</code>/<code>delete</code> calls</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -294,7 +296,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                               <td>
                                 <div>
                                   <p>A <code>CellConfiguration</code> called for each cell to configure it with an item</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -307,9 +308,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource15itemAtIndexPathFCSo11NSIndexPathq_"></a>
-                    <a name="//apple_ref/swift/Method/itemAtIndexPath(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource15itemAtIndexPathFCSo11NSIndexPathq_">itemAtIndexPath(_:)</a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C4itemq_10Foundation9IndexPathV2at_tF"></a>
+                    <a name="//apple_ref/swift/Method/item(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C4itemq_10Foundation9IndexPathV2at_tF">item(at:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -317,16 +318,14 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the item for a given <code>indexPath</code>
-- Parameter indexPath: An <code>indexPath</code> locating the item in the <code>dataSource</code>
-- Returns: The item located at the given <code>indexPath</code></p>
+                        <p>Returns the item for a given <code>indexPath</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">itemAtIndexPath</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">NSIndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ItemType</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">item</span><span class="p">(</span><span class="n">at</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ItemType</span></code></pre>
 
                         </div>
                       </div>
@@ -337,13 +336,12 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>indexPath</em>
+                                <em>at</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
                                   <p>An <code>indexPath</code> locating the item in the <code>dataSource</code></p>
-
                                 </div>
                               </td>
                             </tr>
@@ -353,7 +351,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>The item located at the given <code>indexPath</code></p>
-
                       </div>
                     </section>
                   </div>
@@ -361,9 +358,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource16indexPathForItemFq_GSqCSo11NSIndexPath_"></a>
-                    <a name="//apple_ref/swift/Method/indexPathForItem(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource16indexPathForItemFq_GSqCSo11NSIndexPath_">indexPathForItem(_:)</a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C9indexPath10Foundation05IndexG0VSgq_3for_tF"></a>
+                    <a name="//apple_ref/swift/Method/indexPath(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C9indexPath10Foundation05IndexG0VSgq_3for_tF">indexPath(for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -371,16 +368,14 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the <code>indexPath</code> for a given item
-- Parameter item: The item for which the locating <code>indexPath</code> should be returned
-- Returns: An <code>indexPath</code> locating the item in the <code>dataSource</code> or nil if the given item was not found in the <code>dataSource</code></p>
+                        <p>Returns the <code>indexPath</code> for a given item</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">indexPathForItem</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="kt">ItemType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSIndexPath</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">indexPath</span><span class="p">(</span><span class="k">for</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">ItemType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">IndexPath</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -391,13 +386,12 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>item</em>
+                                <em>for</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
                                   <p>The item for which the locating <code>indexPath</code> should be returned</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -407,7 +401,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>An <code>indexPath</code> locating the item in the <code>dataSource</code> or nil if the given item was not found in the <code>dataSource</code></p>
-
                       </div>
                     </section>
                   </div>
@@ -415,9 +408,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource16numberOfSectionsFT_Si"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C16numberOfSectionsSiyF"></a>
                     <a name="//apple_ref/swift/Method/numberOfSections()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource16numberOfSectionsFT_Si">numberOfSections()</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C16numberOfSectionsSiyF">numberOfSections()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -425,22 +418,20 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the number of sections in the <code>dataSource</code>
-- Returns: The number of sections</p>
+                        <p>Returns the number of sections in the <code>dataSource</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
                       <div>
                         <h4>Return Value</h4>
                         <p>The number of sections</p>
-
                       </div>
                     </section>
                   </div>
@@ -448,9 +439,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource22numberOfItemsInSectionFSiSi"></a>
-                    <a name="//apple_ref/swift/Method/numberOfItemsInSection(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource22numberOfItemsInSectionFSiSi">numberOfItemsInSection(_:)</a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C13numberOfItemsS2i9inSection_tF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfItems(inSection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C13numberOfItemsS2i9inSection_tF">numberOfItems(inSection:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -458,16 +449,14 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the number of items in a given section in the <code>dataSource</code>
-- Parameter section: The section of which the number of items should be returned
-- Returns: The number of items in the given section</p>
+                        <p>Returns the number of items in a given section in the <code>dataSource</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfItemsInSection</span><span class="p">(</span><span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="n">open</span> <span class="kd">func</span> <span class="nf">numberOfItems</span><span class="p">(</span><span class="n">inSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -478,13 +467,12 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>section</em>
+                                <em>inSection</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
                                   <p>The section of which the number of items should be returned</p>
-
                                 </div>
                               </td>
                             </tr>
@@ -494,7 +482,6 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>The number of items in the given section</p>
-
                       </div>
                     </section>
                   </div>
@@ -513,9 +500,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource9tableViewFTCSo11UITableView21numberOfRowsInSectionSi_Si"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C9tableViewSiSo07UITableG0C_Si21numberOfRowsInSectiontF"></a>
                     <a name="//apple_ref/swift/Method/tableView(_:numberOfRowsInSection:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource9tableViewFTCSo11UITableView21numberOfRowsInSectionSi_Si">tableView(_:numberOfRowsInSection:)</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C9tableViewSiSo07UITableG0C_Si21numberOfRowsInSectiontF">tableView(_:numberOfRowsInSection:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -530,7 +517,7 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                         </div>
                       </div>
@@ -540,9 +527,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource27numberOfSectionsInTableViewFCSo11UITableViewSi"></a>
-                    <a name="//apple_ref/swift/Method/numberOfSectionsInTableView(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource27numberOfSectionsInTableViewFCSo11UITableViewSi">numberOfSectionsInTableView(_:)</a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C16numberOfSectionsSiSo11UITableViewC2in_tF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C16numberOfSectionsSiSo11UITableViewC2in_tF">numberOfSections(in:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -557,7 +544,7 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                         </div>
                       </div>
@@ -567,9 +554,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource9tableViewFTCSo11UITableView21cellForRowAtIndexPathCSo11NSIndexPath_CSo15UITableViewCell"></a>
-                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAtIndexPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource9tableViewFTCSo11UITableView21cellForRowAtIndexPathCSo11NSIndexPath_CSo15UITableViewCell">tableView(_:cellForRowAtIndexPath:)</a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C9tableViewSo07UITableG4CellCSo0hG0C_10Foundation9IndexPathV12cellForRowAttF"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:cellForRowAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C9tableViewSo07UITableG4CellCSo0hG0C_10Foundation9IndexPathV12cellForRowAttF">tableView(_:cellForRowAt:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -584,7 +571,7 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                         </div>
                       </div>
@@ -605,9 +592,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource14collectionViewFTCSo16UICollectionView22numberOfItemsInSectionSi_Si"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C14collectionViewSiSo012UICollectionG0C_Si22numberOfItemsInSectiontF"></a>
                     <a name="//apple_ref/swift/Method/collectionView(_:numberOfItemsInSection:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource14collectionViewFTCSo16UICollectionView22numberOfItemsInSectionSi_Si">collectionView(_:numberOfItemsInSection:)</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C14collectionViewSiSo012UICollectionG0C_Si22numberOfItemsInSectiontF">collectionView(_:numberOfItemsInSection:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -622,7 +609,7 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                         </div>
                       </div>
@@ -632,9 +619,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource32numberOfSectionsInCollectionViewFCSo16UICollectionViewSi"></a>
-                    <a name="//apple_ref/swift/Method/numberOfSectionsInCollectionView(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource32numberOfSectionsInCollectionViewFCSo16UICollectionViewSi">numberOfSectionsInCollectionView(_:)</a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C16numberOfSectionsSiSo16UICollectionViewC2in_tF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C16numberOfSectionsSiSo16UICollectionViewC2in_tF">numberOfSections(in:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -649,7 +636,7 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                         </div>
                       </div>
@@ -659,9 +646,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit14BaseDataSource14collectionViewFTCSo16UICollectionView22cellForItemAtIndexPathCSo11NSIndexPath_CSo20UICollectionViewCell"></a>
-                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAtIndexPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit14BaseDataSource14collectionViewFTCSo16UICollectionView22cellForItemAtIndexPathCSo11NSIndexPath_CSo20UICollectionViewCell">collectionView(_:cellForItemAtIndexPath:)</a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C14collectionViewSo012UICollectionG4CellCSo0hG0C_10Foundation9IndexPathV13cellForItemAttF"></a>
+                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C14collectionViewSo012UICollectionG4CellCSo0hG0C_10Foundation9IndexPathV13cellForItemAttF">collectionView(_:cellForItemAt:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -676,7 +663,7 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                         </div>
                       </div>
@@ -688,8 +675,8 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2016-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2017-09-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
