@@ -675,7 +675,7 @@
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.KWDataSouce-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -692,7 +692,7 @@
 				INFOPLIST_FILE = "iOS Example/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.KWDataSouce-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -783,7 +783,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8U38KF48V6;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -792,7 +792,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2D1CD6486B008B57F3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
