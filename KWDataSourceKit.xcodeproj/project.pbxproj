@@ -457,7 +457,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Kupferwerk GmbH";
 				TargetAttributes = {
 					526601D21C551D350056B3B5 = {
@@ -670,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2B1CD6486B008B57F3 /* iOS-Application.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 1;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -690,6 +691,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2B1CD6486B008B57F3 /* iOS-Application.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 1;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -709,6 +711,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D321CD6486B008B57F3 /* tvOS-Framework.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.$(PRODUCT_NAME:rfc1034identifier)";
 			};
 			name = Debug;
 		};
@@ -716,6 +720,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D321CD6486B008B57F3 /* tvOS-Framework.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.$(PRODUCT_NAME:rfc1034identifier)";
 			};
 			name = Release;
 		};
@@ -723,6 +729,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D301CD6486B008B57F3 /* tvOS-Application.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 1;
 				INFOPLIST_FILE = KWDataSourceKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.KWDataSourceKitTests-tvOS";
@@ -736,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D301CD6486B008B57F3 /* tvOS-Application.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 1;
 				INFOPLIST_FILE = KWDataSourceKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.KWDataSourceKitTests-tvOS";
@@ -749,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2B1CD6486B008B57F3 /* iOS-Application.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 1;
 				INFOPLIST_FILE = KWDataSourceKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -761,6 +770,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2B1CD6486B008B57F3 /* iOS-Application.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 1;
 				INFOPLIST_FILE = KWDataSourceKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -773,6 +783,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D251CD6486B008B57F3 /* Debug.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 			};
 			name = Debug;
 		};
@@ -780,6 +796,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D261CD6486B008B57F3 /* Release.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 			};
 			name = Release;
 		};
@@ -787,8 +809,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2D1CD6486B008B57F3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 0;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.$(PRODUCT_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
@@ -798,8 +822,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AF26D2D1CD6486B008B57F3 /* iOS-Framework.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = 0;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kupferwerk.$(PRODUCT_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 			};
