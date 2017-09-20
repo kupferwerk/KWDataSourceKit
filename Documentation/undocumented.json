@@ -128,14 +128,14 @@
     },
     {
       "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/SectionedDataSource.swift",
-      "line": 50,
+      "line": 41,
       "symbol": "SectionedDataSource.tableView(_:titleForHeaderInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/SectionedDataSource.swift",
-      "line": 54,
+      "line": 45,
       "symbol": "SectionedDataSource.tableView(_:titleForFooterInSection:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

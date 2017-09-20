@@ -127,69 +127,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 11,
-      "symbol": "Section",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 13,
-      "symbol": "Section.items",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 15,
-      "symbol": "Section.headerTitle",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 16,
-      "symbol": "Section.footerTitle",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 18,
-      "symbol": "Section.init(items:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 22,
-      "symbol": "Section.init(items:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 26,
-      "symbol": "Section.add(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 30,
-      "symbol": "Section.add(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Section.swift",
-      "line": 34,
-      "symbol": "Section.add(contentsOf:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/SectionedDataSource.swift",
       "line": 50,
       "symbol": "SectionedDataSource.tableView(_:titleForHeaderInSection:)",
