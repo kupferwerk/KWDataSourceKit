@@ -29,7 +29,7 @@ open class BaseDataSource<CellType: Reusable, ItemType>: NSObject, UITableViewDa
     
     /// If the `collectionView` property is assigned, the `dataSource` will perform `insert`/`reload`/`delete` calls on it as the
     /// `dataSource`'s data changes
-    public weak var collectionView: UICollectionView? {
+    @objc public weak var collectionView: UICollectionView? {
         willSet {
             precondition(!(newValue != nil && tableView != nil), "TableView property is already assigned. Use either a collectionView *OR* a tableView. Using both at the same time is not supported!")
         }
@@ -37,7 +37,7 @@ open class BaseDataSource<CellType: Reusable, ItemType>: NSObject, UITableViewDa
     
     /// If the `tableView` property is assigned, the `dataSource` will perform `insert`/`reload`/`delete` calls on it as the
     /// `dataSource`'s data changes
-    public weak var tableView: UITableView? {
+    @objc public weak var tableView: UITableView? {
         willSet {
             precondition(!(newValue != nil && collectionView != nil), "CollectionView property is already assigned. Use either a collectionView *OR* a tableView. Using both at the same time is not supported!")
         }
@@ -73,14 +73,14 @@ open class BaseDataSource<CellType: Reusable, ItemType>: NSObject, UITableViewDa
     
     /// Returns the number of sections in the `dataSource`
     /// - Returns: The number of sections
-    open func numberOfSections() -> Int {
+    @objc open func numberOfSections() -> Int {
         fatalError("\(#function) has to be implemented by subclasses!")
     }
     
     /// Returns the number of items in a given section in the `dataSource`
     /// - Parameter inSection: The section of which the number of items should be returned
     /// - Returns: The number of items in the given section
-    open func numberOfItems(inSection section: Int) -> Int {
+    @objc open func numberOfItems(inSection section: Int) -> Int {
         fatalError("\(#function) has to be implemented by subclasses!")
     }
     

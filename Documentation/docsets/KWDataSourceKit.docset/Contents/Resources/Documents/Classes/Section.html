@@ -14,7 +14,7 @@
     <a title="Section Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">KWDataSourceKit Docs</a> (32% documented)</p>
+        <p><a href="../index.html">KWDataSourceKit Docs</a> (62% documented)</p>
         <p class="header-right"><a href="https://github.com/kupferwerk/KWDataSourceKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -62,7 +62,19 @@
         <section>
           <section class="section">
             <h1>Section</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Section</span><span class="o">&lt;</span><span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p><code>Section</code> is a value type that contains section information for a single element of a <code><a href="../Classes/SectionedDataSource.html">SectionedDataSource</a></code>&lsquo;s
+<code>sections</code> array property.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Create an area of these objects and set them to the <code>sections</code> property on <code><a href="../Classes/SectionedDataSource.html">SectionedDataSource</a></code>
+
+</div>
 
           </section>
           <section class="section task-group-section">
@@ -71,9 +83,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15KWDataSourceKit7Section5itemsGSax_"></a>
+                    <a name="/s:15KWDataSourceKit7SectionC5itemsSayxGv"></a>
                     <a name="//apple_ref/swift/Property/items" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15KWDataSourceKit7Section5itemsGSax_">items</a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionC5itemsSayxGv">items</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -81,8 +93,18 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>items is an array of generic objects that are served to a <code>UITableView</code> or <code>UICollectionView</code>
+by the <code>dataSource</code> and is set in one of the initializers. It contains the cells data and is accessed
+in the <code>CellConfiguration</code> closure when setting up the <code>dataSource</code>.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="kt">ItemType</span><span class="p">]()</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -90,9 +112,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15KWDataSourceKit7Section11headerTitleGSqSS_"></a>
+                    <a name="/s:15KWDataSourceKit7SectionC11headerTitleSSSgv"></a>
                     <a name="//apple_ref/swift/Property/headerTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15KWDataSourceKit7Section11headerTitleGSqSS_">headerTitle</a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionC11headerTitleSSSgv">headerTitle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -100,8 +122,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>headerTitle is an optional text string to be displayed in the section header</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">headerTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -109,9 +139,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC15KWDataSourceKit7Section11footerTitleGSqSS_"></a>
+                    <a name="/s:15KWDataSourceKit7SectionC11footerTitleSSSgv"></a>
                     <a name="//apple_ref/swift/Property/footerTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC15KWDataSourceKit7Section11footerTitleGSqSS_">footerTitle</a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionC11footerTitleSSSgv">footerTitle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -119,8 +149,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>footerTitle is an optional text string to be displazed in the section footer</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">footerTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -128,9 +166,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit7SectioncFt5itemsGSax__GS0_x_"></a>
+                    <a name="/s:15KWDataSourceKit7SectionCACyxGSayxG5itemsd_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(items:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit7SectioncFt5itemsGSax__GS0_x_">init(items:)</a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionCACyxGSayxG5itemsd_tcfc">init(items:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -138,8 +176,35 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializes a new <code>Section</code></p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="kt">ItemType</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>items</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>comma delimited items to be fed by the <code>dataSource</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -147,9 +212,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit7SectioncFT5itemsGSax__GS0_x_"></a>
+                    <a name="/s:15KWDataSourceKit7SectionCACyxGSayxG5items_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(items:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit7SectioncFT5itemsGSax__GS0_x_">init(items:)</a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionCACyxGSayxG5items_tcfc">init(items:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -157,8 +222,35 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializes a new <code>Section</code></p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt">ItemType</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>items</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>array of items to be fed by the <code>dataSource</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -166,9 +258,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit7Section7addItemFxT_"></a>
-                    <a name="//apple_ref/swift/Method/addItem(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit7Section7addItemFxT_">addItem(_:)</a>
+                    <a name="/s:15KWDataSourceKit7SectionC3addyxF"></a>
+                    <a name="//apple_ref/swift/Method/add(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionC3addyxF">add(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,8 +268,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>helper method used to add an additional item to the <code>Section</code>.</p>
 
+<ul>
+<li>Paramater item: single generic item</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt">ItemType</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -185,9 +289,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit7Section8addItemsFtGSax__T_"></a>
-                    <a name="//apple_ref/swift/Method/addItems(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit7Section8addItemsFtGSax__T_">addItems(_:)</a>
+                    <a name="/s:15KWDataSourceKit7SectionC3addySayxGd_tF"></a>
+                    <a name="//apple_ref/swift/Method/add(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionC3addySayxGd_tF">add(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -195,8 +299,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>helper method used to add multiple items to the <code>Section</code>.</p>
 
+<ul>
+<li>Paramater _ newItems: comma delimited items</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">_</span> <span class="nv">newItems</span><span class="p">:</span> <span class="kt">ItemType</span><span class="o">...</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -204,9 +320,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC15KWDataSourceKit7Section8addItemsFGSax_T_"></a>
-                    <a name="//apple_ref/swift/Method/addItems(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC15KWDataSourceKit7Section8addItemsFGSax_T_">addItems(_:)</a>
+                    <a name="/s:15KWDataSourceKit7SectionC3addySayxG10contentsOf_tF"></a>
+                    <a name="//apple_ref/swift/Method/add(contentsOf:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionC3addySayxG10contentsOf_tF">add(contentsOf:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -214,8 +330,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>helper method used to add multiple items to the <code>Section</code>.</p>
 
+<ul>
+<li>Paramater contentsOf: array of items</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">contentsOf</span> <span class="nv">newItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">ItemType</span><span class="p">])</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -225,8 +353,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2016-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2017-09-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

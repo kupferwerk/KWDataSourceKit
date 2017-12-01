@@ -1,1 +1,145 @@
-{"warnings":[{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Reusable.swift","line":18,"symbol":"reuseId","symbol_kind":"source.lang.swift.decl.var.static","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Reusable.swift","line":22,"symbol":"reuseId","symbol_kind":"source.lang.swift.decl.var.static","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/BaseDataSource.swift","line":89,"symbol":"tableView(_:numberOfRowsInSection:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/BaseDataSource.swift","line":93,"symbol":"numberOfSectionsInTableView(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/BaseDataSource.swift","line":97,"symbol":"tableView(_:cellForRowAtIndexPath:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/BaseDataSource.swift","line":111,"symbol":"collectionView(_:numberOfItemsInSection:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/BaseDataSource.swift","line":115,"symbol":"numberOfSectionsInCollectionView(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/BaseDataSource.swift","line":119,"symbol":"collectionView(_:cellForItemAtIndexPath:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/ArrayDataSource.swift","line":36,"symbol":"numberOfSections()","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/ArrayDataSource.swift","line":40,"symbol":"numberOfItemsInSection(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/ArrayDataSource.swift","line":45,"symbol":"itemAtIndexPath(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/SectionedDataSource.swift","line":36,"symbol":"numberOfSections()","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/SectionedDataSource.swift","line":40,"symbol":"numberOfItemsInSection(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/SectionedDataSource.swift","line":44,"symbol":"itemAtIndexPath(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/SectionedDataSource.swift","line":50,"symbol":"tableView(_:titleForHeaderInSection:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/SectionedDataSource.swift","line":54,"symbol":"tableView(_:titleForFooterInSection:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":11,"symbol":"Section","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":13,"symbol":"items","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":15,"symbol":"headerTitle","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":16,"symbol":"footerTitle","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":18,"symbol":"init(items:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":22,"symbol":"init(items:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":26,"symbol":"addItem(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":30,"symbol":"addItems(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/Section.swift","line":34,"symbol":"addItems(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":41,"symbol":"CoreDataSource","symbol_kind":"source.lang.swift.decl.class","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":47,"symbol":"paused","symbol_kind":"source.lang.swift.decl.var.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":57,"symbol":"init(fetchRequest:inContext:sectionNameKeyPath:collectionView:tableView:cellConfiguration:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":67,"symbol":"init(fetchedResultsController:collectionView:tableView:cellConfiguration:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":78,"symbol":"loadContent()","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":90,"symbol":"numberOfSections()","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":94,"symbol":"numberOfItemsInSection(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":101,"symbol":"itemAtIndexPath(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":107,"symbol":"controller(_:sectionIndexTitleForSectionName:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":111,"symbol":"controllerWillChangeContent(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":116,"symbol":"controller(_:didChangeObject:atIndexPath:forChangeType:newIndexPath:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":133,"symbol":"controller(_:didChangeSection:atIndex:forChangeType:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"},{"file":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS/KWDataSourceKit/CoreDataSource.swift","line":147,"symbol":"controllerDidChangeContent(_:)","symbol_kind":"source.lang.swift.decl.function.method.instance","warning":"undocumented"}],"source_directory":"/Users/mnagler/Development/Kupferwerk/KWDataSourceKit-OS"}
+{
+  "warnings": [
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/BaseDataSource.swift",
+      "line": 89,
+      "symbol": "BaseDataSource.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/BaseDataSource.swift",
+      "line": 93,
+      "symbol": "BaseDataSource.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/BaseDataSource.swift",
+      "line": 97,
+      "symbol": "BaseDataSource.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/BaseDataSource.swift",
+      "line": 109,
+      "symbol": "BaseDataSource.collectionView(_:numberOfItemsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/BaseDataSource.swift",
+      "line": 113,
+      "symbol": "BaseDataSource.numberOfSections(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/BaseDataSource.swift",
+      "line": 117,
+      "symbol": "BaseDataSource.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 41,
+      "symbol": "CoreDataSource",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 47,
+      "symbol": "CoreDataSource.paused",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 57,
+      "symbol": "CoreDataSource.init(fetchRequest:inContext:sectionNameKeyPath:collectionView:tableView:cellConfiguration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 67,
+      "symbol": "CoreDataSource.init(fetchedResultsController:collectionView:tableView:cellConfiguration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 78,
+      "symbol": "CoreDataSource.loadContent()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 107,
+      "symbol": "CoreDataSource.controller(_:sectionIndexTitleForSectionName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 111,
+      "symbol": "CoreDataSource.controllerWillChangeContent(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 116,
+      "symbol": "CoreDataSource.controller(_:didChange:at:for:newIndexPath:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 133,
+      "symbol": "CoreDataSource.controller(_:didChange:atSectionIndex:for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/CoreDataSource.swift",
+      "line": 147,
+      "symbol": "CoreDataSource.controllerDidChangeContent(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Reusable.swift",
+      "line": 18,
+      "symbol": "Reusable.reuseId",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/Reusable.swift",
+      "line": 22,
+      "symbol": "Reusable.reuseId",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/SectionedDataSource.swift",
+      "line": 41,
+      "symbol": "SectionedDataSource.tableView(_:titleForHeaderInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak/KWDataSourceKit/SectionedDataSource.swift",
+      "line": 45,
+      "symbol": "SectionedDataSource.tableView(_:titleForFooterInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/matthew.korporaal/Development/KWDataSourceKit.bak"
+}

@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">KWDataSourceKit Docs</a> (32% documented)</p>
+        <p><a href="index.html">KWDataSourceKit Docs</a> (62% documented)</p>
         <p class="header-right"><a href="https://github.com/kupferwerk/KWDataSourceKit"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -70,9 +70,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C15KWDataSourceKit14BaseDataSource"></a>
+                    <a name="/s:15KWDataSourceKit08BaseDataB0C"></a>
                     <a name="//apple_ref/swift/Class/BaseDataSource" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C15KWDataSourceKit14BaseDataSource">BaseDataSource</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08BaseDataB0C">BaseDataSource</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -81,13 +81,16 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p><code>BaseDataSource</code> is an abstract <code>DataSource</code> that contains functionality used by several other <code>DataSources</code>. It can not
-be used directly, as some methods need to implemented by subclasses: 
-- <code>itemAtIndexPath(indexPath: NSIndexPath) -&gt; ItemType</code>
-- <code>indexPathForItem(item: ItemType) -&gt; NSIndexPath?</code>
-- <code>numberOfSections() -&gt; Int</code>
-- <code>numberOfItemsInSection(section: Int) -&gt; Int</code>
+be used directly, as some methods need to implemented by subclasses: </p>
+
+<ul>
+<li><code>item(at indexPath: NSIndexPath) -&gt; ItemType</code></li>
+<li><code>indexPath(for: item: ItemType) -&gt; NSIndexPath?</code></li>
+<li><code>numberOfSections() -&gt; Int</code></li>
+<li><code>numberOfItems(inSection section: Int) -&gt; Int</code>
 If you are implementing your own subclass of <code>BaseDataSource</code> be sure to implement these methods. The default implementation
-causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
+causes a <code>fatalError</code> to warn about incomplete subclasses.</li>
+</ul>
 
                         <a href="Classes/BaseDataSource.html" class="slightly-smaller">See more</a>
                       </div>
@@ -95,7 +98,7 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span><span class="p">,</span> <span class="kt">UICollectionViewDataSource</span></code></pre>
 
                         </div>
                       </div>
@@ -109,9 +112,9 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C15KWDataSourceKit15ArrayDataSource"></a>
+                    <a name="/s:15KWDataSourceKit09ArrayDataB0C"></a>
                     <a name="//apple_ref/swift/Class/ArrayDataSource" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C15KWDataSourceKit15ArrayDataSource">ArrayDataSource</a>
+                    <a class="token" href="#/s:15KWDataSourceKit09ArrayDataB0C">ArrayDataSource</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -121,8 +124,12 @@ causes a <code>fatalError</code> to warn about incomplete subclasses.</p>
                       <div class="abstract">
                         <p><code>ArrayDataSource</code> is a lightweight <code>DataSource</code> that can be used as a <code>UITableViewDataSource</code> or
 <code>UICollectionViewDataSource</code>. <code>ArrayDataSource</code> always uses a single section. To change the items
-served by the <code>dataSource</code> set the <code>items</code> property.
-- Note: If you need multiple sections, use <code><a href="Classes/SectionedDataSource.html">SectionedDataSource</a></code> instead</p>
+served by the <code>dataSource</code> set the <code>items</code> property.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If you need multiple sections, use <code><a href="Classes/SectionedDataSource.html">SectionedDataSource</a></code> instead
+
+</div>
 
                         <a href="Classes/ArrayDataSource.html" class="slightly-smaller">See more</a>
                       </div>
@@ -130,7 +137,7 @@ served by the <code>dataSource</code> set the <code>items</code> property.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ArrayDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ArrayDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -144,9 +151,9 @@ served by the <code>dataSource</code> set the <code>items</code> property.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C15KWDataSourceKit19SectionedDataSource"></a>
+                    <a name="/s:15KWDataSourceKit013SectionedDataB0C"></a>
                     <a name="//apple_ref/swift/Class/SectionedDataSource" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C15KWDataSourceKit19SectionedDataSource">SectionedDataSource</a>
+                    <a class="token" href="#/s:15KWDataSourceKit013SectionedDataB0C">SectionedDataSource</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -156,8 +163,12 @@ served by the <code>dataSource</code> set the <code>items</code> property.
                       <div class="abstract">
                         <p><code>SectionedDataSource</code> is a lightweight <code>DataSource</code> that can be used as a <code>UITableViewDataSource</code> or
 <code>UICollectionViewDataSource</code>. <code>SectionedDataSource</code> supports multiple sections. To change the items
-served by the <code>dataSource</code> set the <code>items</code> property.
-- Note: If you need only one section, consider using <code><a href="Classes/ArrayDataSource.html">ArrayDataSource</a></code> instead</p>
+served by the <code>dataSource</code> set the <code>items</code> property.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If you need only one section, consider using <code><a href="Classes/ArrayDataSource.html">ArrayDataSource</a></code> instead
+
+</div>
 
                         <a href="Classes/SectionedDataSource.html" class="slightly-smaller">See more</a>
                       </div>
@@ -165,7 +176,7 @@ served by the <code>dataSource</code> set the <code>items</code> property.
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">SectionedDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Reusable.html">Reusable</a></span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/BaseDataSource.html">BaseDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -179,9 +190,9 @@ served by the <code>dataSource</code> set the <code>items</code> property.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C15KWDataSourceKit7Section"></a>
+                    <a name="/s:15KWDataSourceKit7SectionC"></a>
                     <a name="//apple_ref/swift/Class/Section" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C15KWDataSourceKit7Section">Section</a>
+                    <a class="token" href="#/s:15KWDataSourceKit7SectionC">Section</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -189,9 +200,23 @@ served by the <code>dataSource</code> set the <code>items</code> property.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p><code>Section</code> is a value type that contains section information for a single element of a <code><a href="Classes/SectionedDataSource.html">SectionedDataSource</a></code>&lsquo;s
+<code>sections</code> array property.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Create an area of these objects and set them to the <code>sections</code> property on <code><a href="Classes/SectionedDataSource.html">SectionedDataSource</a></code>
+
+</div>
 
                         <a href="Classes/Section.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Section</span><span class="o">&lt;</span><span class="kt">ItemType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -203,9 +228,9 @@ served by the <code>dataSource</code> set the <code>items</code> property.
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C15KWDataSourceKit14CoreDataSource"></a>
+                    <a name="/s:15KWDataSourceKit08CoreDataB0C"></a>
                     <a name="//apple_ref/swift/Class/CoreDataSource" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C15KWDataSourceKit14CoreDataSource">CoreDataSource</a>
+                    <a class="token" href="#/s:15KWDataSourceKit08CoreDataB0C">CoreDataSource</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -225,8 +250,8 @@ served by the <code>dataSource</code> set the <code>items</code> property.
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2016-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2017-09-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

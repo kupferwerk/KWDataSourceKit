@@ -13,7 +13,7 @@
     <a title="KWDataSourceKit  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">KWDataSourceKit Docs</a> (32% documented)</p>
+        <p><a href="index.html">KWDataSourceKit Docs</a> (62% documented)</p>
         <p class="header-right"><a href="https://github.com/kupferwerk/KWDataSourceKit"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -61,21 +61,22 @@
         <section>
           <section class="section">
             
-            <a href='#kwdatasourcekit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='kwdatasourcekit'>KWDataSourceKit</h1>
+            <h1 id='kwdatasourcekit' class='heading'>KWDataSourceKit</h1>
 
 <p><img src="https://img.shields.io/badge/platform-iOS%20%7C%20tvOS-lightgrey.svg" alt="Platform">
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
-<a href="https://cocoapods.org"><img src="https://img.shields.io/badge/CocoaPods-compatible-blue.svg" alt="CocoaPods Compatible"></a></p>
+<a href="https://cocoapods.org"><img src="https://img.shields.io/badge/CocoaPods-compatible-blue.svg" alt="CocoaPods Compatible"></a>
+<a href="https://travis-ci.org/kupferwerk/KWDataSourceKit"><img src="https://travis-ci.org/kupferwerk/KWDataSourceKit.svg?branch=master" alt="Build Status"></a></p>
 
 <p>KWDataSourceKit is a library containing flexible data sources for <code>UITableView</code> and <code>UICollectionView</code>. It aims to slim down your view controllers be moving <code>UITableViewDataSource</code> and <code>UICollectionViewDataSource</code> to a separate object.</p>
-<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<h2 id='installation' class='heading'>Installation</h2>
 
 <blockquote>
 <p><strong>Embedded frameworks require a minimum deployment target of iOS 8.</strong></p>
 
 <p>KWDataSourceKit is not supported on iOS 7 due to the lack of support for frameworks.</p>
 </blockquote>
-<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='carthage'>Carthage</h3>
+<h3 id='carthage' class='heading'>Carthage</h3>
 
 <p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
 
@@ -86,7 +87,7 @@
 <p>Run <code>carthage update</code> to build the framework and drag the built <code>KWDataSourceKit.framework</code> into your Xcode project.</p>
 
 <p>Using Carthage is the preferred way of integrating KWDataSourceKit into your project.</p>
-<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>Cocoapods</h3>
+<h3 id='cocoapods' class='heading'>Cocoapods</h3>
 
 <p><a href="http://cocoapods.org">CocoaPods</a> is a dependency manager for Cocoa projects.</p>
 
@@ -105,7 +106,7 @@
 <p>Then, run the following command:</p>
 <pre class="highlight shell"><code><span class="gp">$ </span>pod install
 </code></pre>
-<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<h2 id='usage' class='heading'>Usage</h2>
 
 <p><code>KWDataSourceKit</code> aims to slim your view controllers by removing <code>UITableViewDataSource</code> and <code>UICollectionViewDataSource</code> implementations from them. There is some work to be done in your view controller however. Here is an example:</p>
 <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="kt">ArrayDataSource</span><span class="o">&lt;</span><span class="kt">SomeTableViewCell</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;!</span>
@@ -123,13 +124,13 @@
 </code></pre>
 
 <p>In this snippet of code we have initialized the <code>DataSource</code> object and configured our <code>UITableView</code> instance to use it. Depending on the specific type of data source you intend to use, setting everything up may involve some extra work.</p>
-<a href='#arraydatasource' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='arraydatasource'>ArrayDataSource</h3>
+<h3 id='arraydatasource' class='heading'>ArrayDataSource</h3>
 
 <p><code>ArrayDataSource</code> can be used to power a <code>UITableView</code> or <code>UICollectionView</code> with a single section. It supports uniform array of <em>items</em> which you would like to display in your <code>UITableView</code> or <code>UICollectionView</code>.</p>
-<a href='#sectioneddatasource' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='sectioneddatasource'>SectionedDataSource</h3>
+<h3 id='sectioneddatasource' class='heading'>SectionedDataSource</h3>
 
 <p><code>SectionedDataSource</code> is very similar to <code>ArrayDataSource</code> but has support for multiple sections. Each section can have a header and a footer. It&rsquo;s <code>items</code> property is an array of <code>Section&lt;ItemType&gt;</code>. Because of that, items need to be of the same type for all sections.</p>
-<a href='#coredatasource' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='coredatasource'>CoreDataSource</h3>
+<h3 id='coredatasource' class='heading'>CoreDataSource</h3>
 
 <p><code>CoreDataSource</code> makes it easy to display <code>NSManagedObject</code>s retrieved from <strong>Core Data</strong> in an <code>UITableView</code> or <code>UICollectionView</code>. It works by utilizing Apple&rsquo;s <code>NSFetchedResultsController</code> and can automatically update your <code>UITableView</code> or <code>UICollectionView</code> once the data in the assigned <code>NSManagedObjectContext</code> changes. It supports multiple sections through the <code>sectionNameKeyPath</code> property.</p>
 
@@ -142,7 +143,7 @@
     <span class="c1">// The fetchRequest tells the data source which objects</span>
     <span class="c1">// it should load from Core Data</span>
     <span class="k">let</span> <span class="nv">fetchRequest</span> <span class="o">=</span> <span class="kt">NSFetchRequest</span><span class="p">(</span><span class="nv">entityName</span><span class="p">:</span> <span class="s">"Entity"</span><span class="p">)</span>
-    <span class="n">fetchRequest</span><span class="o">.</span><span class="n">sortDescriptors</span> <span class="o">=</span> <span class="p">[</span><span class="kt">NSSortDescriptor</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="s">"title"</span><span class="p">,</span> <span class="k">as</span><span class="nv">cending</span><span class="p">:</span> <span class="kc">true</span><span class="p">)]</span>
+    <span class="n">fetchRequest</span><span class="o">.</span><span class="n">sortDescriptors</span> <span class="o">=</span> <span class="p">[</span><span class="kt">NSSortDescriptor</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="s">"title"</span><span class="p">,</span> <span class="nv">ascending</span><span class="p">:</span> <span class="kc">true</span><span class="p">)]</span>
 
     <span class="c1">// We initialize a `CoreDataSource` with the previously configured fetch request</span>
     <span class="c1">// and a `NSManagedObjectContext` that should be used to execute the fetch</span>
@@ -161,12 +162,33 @@
     <span class="n">dataSource</span><span class="o">.</span><span class="nf">loadContent</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre>
+<h2 id='license' class='heading'>License</h2>
+<pre class="highlight plaintext"><code>Copyright 2016 Kupferwerk GmbH
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+
+<p><strong>Note</strong>: The <a href="Configuration/">Configuration</a> folder contains a
+third party project <a href="https://github.com/jspahrsummers/xcconfigs">xcconfigs</a> and
+it&rsquo;s README.md. The license in that <a href="Configuration/README.md">README.md</a> only 
+applies to the contents of the <a href="Configuration/">Configuration</a>
+folder that are part of <a href="https://github.com/jspahrsummers/xcconfigs">xcconfigs</a>.</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2016-06-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/kupferwerk" target="_blank" rel="external">Kupferwerk GmbH</a>. All rights reserved. (Last updated: 2017-09-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

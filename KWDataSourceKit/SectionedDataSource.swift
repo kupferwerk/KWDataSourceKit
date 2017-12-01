@@ -23,16 +23,7 @@ open class SectionedDataSource<CellType: Reusable, ItemType>: BaseDataSource<Cel
             collectionView?.reloadData()
         }
     }
-    
-    /// Initializes a new `SectionedDataSource`
-    /// - Parameter collectionView: A `collectionView` on which the `dataSource` should perform `insert`/`reload`/`delete` calls
-    /// - Parameter tableView: A `tableView` on which the `dataSource` should perform `insert`/`reload`/`delete` calls
-    /// - Parameter cellConfiguration: A `CellConfiguration` called for each cell to configure it with an item
-    /// - Note: You should only ever provide a `tableView` *or* a `collectionView` for one `dataSource`
-    public override init(collectionView: UICollectionView? = nil, tableView: UITableView? = nil, cellConfiguration: CellConfiguration? = nil) {
-        super.init(collectionView: collectionView, tableView: tableView, cellConfiguration: cellConfiguration)
-    }
-    
+
     open override func numberOfSections() -> Int {
         return sections.count
     }
@@ -47,11 +38,11 @@ open class SectionedDataSource<CellType: Reusable, ItemType>: BaseDataSource<Cel
     
     // MARK: - UITableViewDataSource
     
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    @objc public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].headerTitle
     }
     
-    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    @objc public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return sections[section].footerTitle
     }
     
