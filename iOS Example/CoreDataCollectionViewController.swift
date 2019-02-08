@@ -26,7 +26,7 @@ class CoreDataCollectionViewController: UICollectionViewController {
         })
         
         collectionView?.dataSource = dataSource
-        dataSource.loadContent()
+        dataSource.paused = false
     }
     
 }

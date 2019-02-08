@@ -30,7 +30,7 @@ class CoreDataDataSourceTests: XCTestCase {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         dataSource = CoreDataSource<CustomTableViewCell, TestEntity>(fetchRequest: fetchRequest, inContext: mainContext, tableView: UITableView(), cellConfiguration: { (cell, item) -> () in
         })
-        dataSource.loadContent()
+        dataSource.paused = false
     }
     
     func testSections() {

@@ -41,10 +41,9 @@ private enum CollectionViewChanges {
 open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: BaseDataSource<CellType, ItemType>, NSFetchedResultsControllerDelegate {
     
     private var fetchedResultsController: NSFetchedResultsController<ItemType>
-    
     private var collectionViewChanges: [CollectionViewChanges]?
     
-    @objc public var paused: Bool = false {
+    @objc public var paused: Bool = true {
         didSet {
             if paused == oldValue { return }
             fetchedResultsController.delegate = !paused ? self : nil
@@ -55,34 +54,53 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
     }
     
     public convenience init(fetchRequest: NSFetchRequest<ItemType>,
-        inContext context: NSManagedObjectContext,
-        sectionNameKeyPath: String? = nil,
-        collectionView: UICollectionView? = nil,
-        tableView: UITableView? = nil,
-        cellConfiguration: CellConfiguration? = nil) {
-            let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil);
-            self.init(fetchedResultsController: controller, collectionView: collectionView, tableView: tableView, cellConfiguration: cellConfiguration)
+                            inContext context: NSManagedObjectContext,
+                            sectionNameKeyPath: String? = nil,
+                            collectionView: UICollectionView? = nil,
+                            tableView: UITableView? = nil,
+                            cellConfiguration: CellConfiguration? = nil) {
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil);
+        self.init(fetchedResultsController: controller, collectionView: collectionView, tableView: tableView, cellConfiguration: cellConfiguration)
     }
     
     public init(fetchedResultsController: NSFetchedResultsController<ItemType>,
-        collectionView: UICollectionView? = nil,
-        tableView: UITableView? = nil,
-        cellConfiguration: CellConfiguration? = nil) {
-            self.fetchedResultsController = fetchedResultsController
-            super.init(collectionView: collectionView, tableView: tableView, cellConfiguration: cellConfiguration)
-            self.fetchedResultsController.delegate = self
+                collectionView: UICollectionView? = nil,
+                tableView: UITableView? = nil,
+                cellConfiguration: CellConfiguration? = nil) {
+        self.fetchedResultsController = fetchedResultsController
+        super.init(collectionView: collectionView, tableView: tableView, cellConfiguration: cellConfiguration)
+        self.fetchedResultsController.delegate = self
+    }
+    
+    // MARK: - Configuration
+    
+    @objc public func set(fetchRequest: NSFetchRequest<ItemType>, sectionNameKeyPath: String? = nil) {
+        let context = fetchedResultsController.managedObjectContext
+        fetchedResultsController.delegate = nil
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionNameKeyPath, cacheName: nil)
+        
+        if !paused {
+            fetchedResultsController.delegate = self
+            loadContent()
+        }
     }
     
     // MARK: - Fetching
     
-    @objc public func loadContent() {
+    @objc private func loadContent() {
         do {
             try fetchedResultsController.performFetch()
             tableView?.reloadData()
             collectionView?.reloadData()
+            didLoadContent()
         } catch let error as NSError {
             print("An error occured while performing a fetch request: \(error.localizedDescription)")
         }
+    }
+    
+    @objc open func didLoadContent() {
+        // Overwrite in subclasses
     }
     
     // MARK: - BaseDataSource
@@ -101,7 +119,13 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
     open override func item(at indexPath: IndexPath) -> ItemType {
         return fetchedResultsController.object(at: indexPath)
     }
-
+    
+    // MARK: - Public
+    
+    open func title(forHeaderInSection section: Int) -> String? {
+        return fetchedResultsController.sections?[section].name
+    }
+    
     // MARK: - NSFetchedResultsControllerDelegate
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName sectionName: String) -> String? {
@@ -117,16 +141,19 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
         switch type {
         case .insert:
             collectionViewChanges?.append(.rowInsert(indexPath: newIndexPath!))
-            tableView?.insertRows(at: [newIndexPath!], with: .automatic)
+            tableView?.insertRows(at: [newIndexPath!], with: .fade)
         case .delete:
             collectionViewChanges?.append(.rowDelete(indexPath: indexPath!))
-            tableView?.deleteRows(at: [indexPath!], with: .automatic)
-        case .update:
-            collectionViewChanges?.append(.rowUpdate(indexPath: indexPath!))
-            tableView?.reloadRows(at: [indexPath!], with: .automatic)
-        case .move:
-            collectionViewChanges?.append(.rowMove(fromIndexPath: indexPath!, toIndexPath: newIndexPath!))
-            tableView?.moveRow(at: indexPath!, to: newIndexPath!)
+            tableView?.deleteRows(at: [indexPath!], with: .fade)
+        case .update, .move:
+            if indexPath == newIndexPath {
+                collectionViewChanges?.append(.rowUpdate(indexPath: indexPath!))
+                tableView?.reloadRows(at: [indexPath!], with: .none)
+            } else {
+                collectionViewChanges?.append(.rowMove(fromIndexPath: indexPath!, toIndexPath: newIndexPath!))
+                tableView?.deleteRows(at: [indexPath!], with: .fade)
+                tableView?.insertRows(at: [newIndexPath!], with: .fade)
+            }
         }
     }
     
@@ -134,10 +161,10 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
         switch type {
         case .insert:
             collectionViewChanges?.append(.sectionInsert(sectionIndex: sectionIndex))
-            tableView?.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
+            tableView?.insertSections(IndexSet(integer: sectionIndex), with: .fade)
         case .delete:
             collectionViewChanges?.append(.sectionDelete(sectionIndex: sectionIndex))
-            tableView?.deleteSections(IndexSet(integer: sectionIndex), with: .automatic)
+            tableView?.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
         default:
             assertionFailure("Unsupported NSFetchedResultsChangeType!")
             break
@@ -145,16 +172,22 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
     }
     
     public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView?.endUpdates()
+        if let tableView = tableView {
+            tableView.endUpdates()
+            didChangeContent()
+        }
         
         if let collectionView = collectionView {
             collectionView.performBatchUpdates({
                 self.collectionViewChanges?.forEach { $0.execute(on: collectionView) }
-            },
-            completion: { (finished) -> Void in
+            }, completion: { (finished) -> Void in
                 self.collectionViewChanges?.removeAll()
+                self.didChangeContent()
             })
         }
     }
     
+    @objc open func didChangeContent() {
+        // Override in subclasses
+    }
 }

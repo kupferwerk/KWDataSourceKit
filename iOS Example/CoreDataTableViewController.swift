@@ -26,7 +26,7 @@ class CoreDataTableViewController: UITableViewController {
         })
         
         tableView.dataSource = dataSource
-        dataSource.loadContent()
+        dataSource.paused = false
     }
     
 }
