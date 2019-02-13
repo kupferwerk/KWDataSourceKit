@@ -43,7 +43,7 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
     private var fetchedResultsController: NSFetchedResultsController<ItemType>
     private var collectionViewChanges: [CollectionViewChanges]?
     
-    @objc public var paused: Bool = true {
+    @objc open var paused: Bool = true {
         didSet {
             if paused == oldValue { return }
             fetchedResultsController.delegate = !paused ? self : nil
