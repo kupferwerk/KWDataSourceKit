@@ -128,16 +128,16 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
     
     // MARK: - NSFetchedResultsControllerDelegate
     
-    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName sectionName: String) -> String? {
+    open func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName sectionName: String) -> String? {
         return sectionName
     }
     
-    public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    open func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         collectionViewChanges = collectionView != nil ? [CollectionViewChanges]() : nil
         self.tableView?.beginUpdates()
     }
     
-    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    open func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
             collectionViewChanges?.append(.rowInsert(indexPath: newIndexPath!))
@@ -157,7 +157,7 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
         }
     }
     
-    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    open func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         switch type {
         case .insert:
             collectionViewChanges?.append(.sectionInsert(sectionIndex: sectionIndex))
@@ -171,7 +171,7 @@ open class CoreDataSource<CellType: Reusable, ItemType: NSFetchRequestResult>: B
         }
     }
     
-    public func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    open func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         if let tableView = tableView {
             tableView.endUpdates()
             didChangeContent()
